@@ -82,7 +82,7 @@ pip install pyautogui
 
 ## **ลิงก์เอกสารของ PyAutoGUI**
 สำหรับข้อมูลเพิ่มเติมเกี่ยวกับ PyAutoGUI และวิธีการใช้งานคำสั่งต่างๆ สามารถศึกษาได้ที่ลิงก์ด้านล่าง:
-- [PyAutoGUI Documentation (ภาษาอังกฤษ)](https://pyautogui.readthedocs.io/en/latest/)
+- [PyAutoGUI Documentation](https://pyautogui.readthedocs.io/en/latest/)
 
 ---
 
