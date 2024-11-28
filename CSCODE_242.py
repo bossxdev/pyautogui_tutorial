@@ -35,7 +35,7 @@ def run_test_case():
     print("เริ่มการทดสอบ...")
 
     
-    pyautogui.moveTo(746, 134) 
+    pyautogui.moveTo(746, 134) #ปุ่มกรอกบาร์โค้ด
     pyautogui.click(button="left") 
     time.sleep(3)
 
@@ -48,7 +48,7 @@ def run_test_case():
 
    
     pyautogui.click(479, 456, button="left")
-    time.sleep(20)
+    time.sleep(30)
 
     
     pyautogui.click(377, 559, button="left")
