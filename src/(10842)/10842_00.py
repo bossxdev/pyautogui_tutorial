@@ -2,8 +2,6 @@
 import pyautogui
 import time  # ใช้สำหรับหน่วงเวลา (delay)
 
-
-
 # ฟังก์ชันหลักสำหรับทดสอบระบบ
 def main():
     """
@@ -15,8 +13,6 @@ def main():
 
         # 2. ขั้นตอนการทดสอบ
         run_test_case()
-
-
     except Exception as e:
         print(f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}")
 
@@ -39,36 +35,49 @@ def run_test_case():
     
     pyautogui.moveTo(746, 134) 
     pyautogui.click(button="left") 
-    time.sleep(3)
+    time.sleep(2)
 
-    
+
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("0993000177967")
+    pyautogui.write("0455560000899")
     time.sleep(2)
 
-   
-    pyautogui.click(479, 456, button="left")
-    time.sleep(20)
+    pyautogui.moveTo(746, 134) 
+    pyautogui.click(button="left") 
+    time.sleep(2)
 
-    pyautogui.click(377, 559, button="left")
-    pyautogui.write("3500")
-    time.sleep(3)
 
-    pyautogui.click(679, 641, button="left")
-    time.sleep(5)
+    pyautogui.write("2000020010155")
+    pyautogui.press("enter")
+    time.sleep(2)
 
-    pyautogui.click(729, 646, button="left")
-    time.sleep(5)
+    pyautogui.write("4711316837755")
+    pyautogui.press("enter")
+    time.sleep(2)
 
-    pyautogui.click(671, 644, button="left")
-    time.sleep(5)
+    pyautogui.write("5000")
+    time.sleep(2)
 
-    pyautogui.click(560, 639, button="left")
-    time.sleep(5)
 
-    pyautogui.click(486, 427, button="left")
+
+
+    pyautogui.moveTo(746, 134) 
+    pyautogui.click(button="left") 
+    time.sleep(2)
+
+    time.sleep(2)
+    pyautogui.moveTo(746, 134) 
+    pyautogui.click(button="left") 
+    time.sleep(2)
+
+    pyautogui.moveTo(746, 134) 
+    pyautogui.click(button="left") 
+    time.sleep(2)
+
+ 
+
 
     print("การทดสอบเสร็จสมบูรณ์")
 if __name__ == "__main__":
