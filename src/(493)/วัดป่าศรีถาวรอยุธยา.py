@@ -27,29 +27,29 @@ def run_test_case():
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("3470000000000")
+    pyautogui.write("4930200000000")
     time.sleep(2)
     
-    pyautogui.click(490, 470, button="left")
+    pyautogui.click(480, 464, button="left")
     time.sleep(20)
     
-    pyautogui.write("20000")
+    pyautogui.write("30000")
+    time.sleep(2)
+    
+    pyautogui.click(677, 635, button="left" )
     time.sleep(3)
     
-    pyautogui.click(670, 640, button="left")
-    time.sleep(3)
-    
-    pyautogui.click(740, 646, button="left")
-    time.sleep(3)
-    
-    pyautogui.click(700, 645, button="left")
+    pyautogui.click(736, 636, button="left")
     time.sleep(5)
     
-    pyautogui.click(560, 634, button="left")
+    pyautogui.click(700, 640, button="left")
+    time.sleep(5)
+    
+    pyautogui.click(560, 630, button="left")
     time.sleep(3)
     
-    pyautogui.click(488, 442, button="left")
-    time.sleep(3)
+    pyautogui.click(500, 430, button="left")
+    time.sleep(5)
     
     print("การทดสอบเสร็จสมบูรณ์")
 if __name__ == "__main__":

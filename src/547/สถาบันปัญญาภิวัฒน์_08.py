@@ -27,28 +27,40 @@ def run_test_case():
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("3470000000000")
+    pyautogui.write("099400063398008")
     time.sleep(2)
     
-    pyautogui.click(490, 470, button="left")
+    pyautogui.click(480, 464, button="left")
     time.sleep(20)
     
-    pyautogui.write("20000")
+    pyautogui.write("5434567")
     time.sleep(3)
     
-    pyautogui.click(670, 640, button="left")
+    pyautogui.press("enter")
+    time.sleep(3)
+
+    pyautogui.write("00123431")
+    time.sleep(3)
+
+    pyautogui.press("enter")
+    time.sleep(20)
+    
+    pyautogui.write("31000")
     time.sleep(3)
     
-    pyautogui.click(740, 646, button="left")
-    time.sleep(3)
-    
-    pyautogui.click(700, 645, button="left")
+    pyautogui.click(700, 640, button="left")
     time.sleep(5)
     
-    pyautogui.click(560, 634, button="left")
+    pyautogui.click(730, 645, button="left")
     time.sleep(3)
     
-    pyautogui.click(488, 442, button="left")
+    pyautogui.click(700, 640, button="left")
+    time.sleep(5)
+    
+    pyautogui.click(550, 640, button="left")
+    time.sleep(3)
+    
+    pyautogui.click(490, 433, button="left")
     time.sleep(3)
     
     print("การทดสอบเสร็จสมบูรณ์")
