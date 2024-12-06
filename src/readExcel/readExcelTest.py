@@ -28,7 +28,7 @@ class ExcelOperations:
             for update in updates:
                 self.sheet.cell(
                     row=update["row"], 
-                    column=update["column"], 
+                    column=18,
                     value=update["value"]
                 )
             return True
@@ -84,8 +84,8 @@ def main():
 
     # ข้อมูลที่ต้องการอัปเดต
     updates = [
-        {"row": 667, "column": 18, "value": "Updated test555"},
-        {"row": 740, "column": 18, "value": "Updated 555"},
+        {"row": 667, "value": "Updated test v.4"},
+        {"row": 740, "value": "Updated v.5"},
     ]
 
     # อัพเดทข้อมูล
