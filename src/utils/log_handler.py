@@ -2,11 +2,11 @@ import logging
 from datetime import datetime
 import os
 
-def log_handler(logger_name: str, level: str = "DEBUG", log_message: str = None):
+def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None):
     """
     ฟังก์ชันสำหรับสร้าง Logger โดยรับพารามิเตอร์ logger_name, level, และ log_message
     :param logger_name: ชื่อของ logger
-    :param level: ระดับของ log เช่น 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'
+    :param log_level: ระดับของ log เช่น 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'
     :param log_message: ข้อความที่ต้องการบันทึกเมื่อสร้าง logger เสร็จ
     :return: logger ที่ตั้งค่าเรียบร้อยแล้ว
     """
@@ -23,10 +23,10 @@ def log_handler(logger_name: str, level: str = "DEBUG", log_message: str = None)
     }
 
     # ตั้งค่าระดับของ logger
-    log_level = log_levels.get(level.upper(), logging.DEBUG)
+    log_level = log_levels.get(log_level.upper(), logging.DEBUG)
 
     # สร้าง logger
-    logger = logging.getLogger(logger_name)
+    logger = logging.getLogger(log_name)
 
     # ตรวจสอบว่ามี handler อยู่แล้วหรือไม่
     if not logger.hasHandlers():
@@ -42,7 +42,7 @@ def log_handler(logger_name: str, level: str = "DEBUG", log_message: str = None)
 
         # สร้างชื่อไฟล์ log ตามวันที่และเวลา
         current_time = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
-        log_filename = f"../logs/{logger_name}_logfile.log"
+        log_filename = f"../logs/{log_name}_logfile.log"
 
         # สร้าง FileHandler สำหรับบันทึก log ลงไฟล์
         file_handler = logging.FileHandler(log_filename, encoding="utf-8")
