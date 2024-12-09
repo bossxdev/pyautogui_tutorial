@@ -7,3 +7,6 @@
 
 # Ignore All (xlsx) files
 *.xlsx
+
+# Ignore All (log) files
+*.log
