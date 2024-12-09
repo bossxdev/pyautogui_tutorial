@@ -1,4 +1,5 @@
 import logging
+import os
 
 def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None):
     """
@@ -6,8 +7,10 @@ def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None
     :param log_name: ชื่อของ log
     :param log_level: ระดับของ log เช่น 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'
     :param log_message: ข้อความที่ต้องการบันทึกเมื่อสร้าง log เสร็จ
-    :return: log ที่ตั้งค่าเรียบร้อยแล้ว
     """
+    
+    # กำหนดเส้นทางโฟลเดอร์เก็บ log
+    os.makedirs("../logs/", exist_ok=True)
 
     # แปลงระดับ log ที่รับเข้ามาเป็นค่าที่สามารถใช้ได้
     log_levels = {
@@ -37,7 +40,7 @@ def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None
         log.addHandler(stream_handler)
 
         # สร้างชื่อไฟล์ log ตามวันที่และเวลา
-        log_filename = f"../src/logs/{log_name}_logfile.log"
+        log_filename = f"../logs/{log_name}_logfile.log"
 
         # สร้าง FileHandler สำหรับบันทึก log ลงไฟล์
         file_handler = logging.FileHandler(log_filename, encoding="utf-8")
