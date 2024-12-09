@@ -1,4 +1,3 @@
-
 import pyautogui
 import time
 
@@ -27,25 +26,15 @@ def run_test_case():
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("099400063398008")
+    pyautogui.write("099300015235202")
     time.sleep(2)
     
     pyautogui.click(480, 464, button="left")
     time.sleep(20)
     
-    pyautogui.write("5434567")
-    time.sleep(3)
     
-    pyautogui.press("enter")
-    time.sleep(3)
-
-    pyautogui.write("00123431")
-    time.sleep(3)
-
-    pyautogui.press("enter") #เบอร์ 0865562828
-    time.sleep(20)
-    
-    pyautogui.write("31000") #---------เพิ่ม validate log ทุก action //  handle function //util
+    #flow กรอกเงิน+ชำระเงิน
+    pyautogui.write("22000") #---------เพิ่ม validate log ทุก action //  handle function //util
     time.sleep(3)
     
     pyautogui.click(700, 640, button="left")

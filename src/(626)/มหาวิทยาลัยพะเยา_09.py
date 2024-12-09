@@ -1,4 +1,3 @@
-
 import pyautogui
 import time
 
@@ -20,32 +19,32 @@ def run_test_case():
     
     print("เริ่มการทดสอบ...")
     
-    pyautogui.click(746, 134)
+    pyautogui.click(746, 134) #กดปุ่มกรอกบาร์โค้ด
     time.sleep(3)
 
-    
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("099400063398008")
+    pyautogui.write("099400077225409")
     time.sleep(2)
     
     pyautogui.click(480, 464, button="left")
     time.sleep(20)
     
-    pyautogui.write("5434567")
+    pyautogui.write("2279900836778")
     time.sleep(3)
     
     pyautogui.press("enter")
-    time.sleep(3)
-
-    pyautogui.write("00123431")
-    time.sleep(3)
-
-    pyautogui.press("enter") #เบอร์ 0865562828
-    time.sleep(20)
+    time.sleep(10)
     
-    pyautogui.write("31000") #---------เพิ่ม validate log ทุก action //  handle function //util
+    pyautogui.write("207200189531126790")
+    time.sleep(3)
+    
+    pyautogui.press("enter")
+    time.sleep(7)
+    
+    #flow กรอกเงิน+ชำระเงิน
+    pyautogui.write("50000") #---------เพิ่ม validate log ทุก action //  handle function //util
     time.sleep(3)
     
     pyautogui.click(700, 640, button="left")
