@@ -84,8 +84,8 @@ def main():
 
     # ข้อมูลที่ต้องการอัปเดต
     updates = [
-        {"row": 667, "column": 18, "value": "Updated test555"},
-        {"row": 740, "column": 18, "value": "Updated 555"},
+        {"row": 667, "column": 18, "value": "Test_comment"},
+        {"row": 740, "column": 18, "value": "Test_comment2 555"},
     ]
 
     # อัพเดทข้อมูล
