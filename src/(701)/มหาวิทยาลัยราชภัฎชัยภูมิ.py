@@ -1,4 +1,3 @@
-
 import pyautogui
 import time
 
@@ -20,48 +19,54 @@ def run_test_case():
     
     print("เริ่มการทดสอบ...")
     
-    pyautogui.click(746, 134)
+    pyautogui.click(746, 134) #กดปุ่มกรอกบาร์โค้ด
     time.sleep(3)
-
     
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("099400063398008")
+    pyautogui.write("099400001030300")
+    time.sleep(2)
+    
+    pyautogui.keyDown('shift')
+    pyautogui.press('\\')
+    pyautogui.keyUp('shift')
+    pyautogui.write("652301107831126744")
+    time.sleep(2)
+    
+    pyautogui.keyDown('shift')
+    pyautogui.press('\\')
+    pyautogui.keyUp('shift')
+    pyautogui.write("201587001867097")
+    time.sleep(2)
+    
+    pyautogui.keyDown('shift')
+    pyautogui.press('\\')
+    pyautogui.keyUp('shift')
+    pyautogui.write("3000100")
     time.sleep(2)
     
     pyautogui.click(480, 464, button="left")
-    time.sleep(20)
+    time.sleep(30)
     
-    pyautogui.write("5434567")
-    time.sleep(3)
+    # #flow กรอกเงิน+ชำระเงิน
+    # pyautogui.write("30000") #---------เพิ่ม validate log ทุก action //  handle function //util
+    # time.sleep(3)
     
-    pyautogui.press("enter")
-    time.sleep(3)
-
-    pyautogui.write("00123431")
-    time.sleep(3)
-
-    pyautogui.press("enter") #เบอร์ 0865562828
-    time.sleep(20)
-    
-    pyautogui.write("31000") #---------เพิ่ม validate log ทุก action //  handle function //util
-    time.sleep(3)
-    
-    pyautogui.click(700, 640, button="left")
-    time.sleep(5)
+    # pyautogui.click(700, 640, button="left")
+    # time.sleep(5)
     
     pyautogui.click(730, 645, button="left")
-    time.sleep(3)
+    time.sleep(10)
     
     pyautogui.click(700, 640, button="left")
-    time.sleep(5)
+    time.sleep(7)
     
     pyautogui.click(550, 640, button="left")
-    time.sleep(3)
+    time.sleep(7)
     
     pyautogui.click(490, 433, button="left")
-    time.sleep(3)
+    time.sleep(7)
     
     print("การทดสอบเสร็จสมบูรณ์")
 if __name__ == "__main__":
