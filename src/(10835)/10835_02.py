@@ -32,40 +32,38 @@ def run_test_case():
     """
     print("เริ่มการทดสอบ...")
 
-    
+    #คลิกปุ่มกรอกบางโค้ด
     pyautogui.moveTo(740, 149, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
     pyautogui.click(button="left") 
     time.sleep(5)
-
+#กรอกรหัสบารโค้ด
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
 
     pyautogui.keyUp('shift')
-    pyautogui.write("010753700137403")
-    time.sleep(2)
+    pyautogui.write("010753700264802")
+    time.sleep(3)
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("123456789")
-    time.sleep(2)
+    pyautogui.write("31000001")
+    time.sleep(3)
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("123")
-    time.sleep(2)
+    pyautogui.write("010019219999123")
+    time.sleep(3)
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("30000")
+    pyautogui.write("4900000")
     pyautogui.press('enter')
-    time.sleep(30)
+    time.sleep(35)
 
 
-    pyautogui.moveTo(516, 528, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
-    pyautogui.click(button="left") 
-    time.sleep(4)
 
 
+#คลิกปุ่มยืนยันทำรายการ
 
     pyautogui.moveTo(680, 646, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
     pyautogui.click(button="left") 
@@ -74,16 +72,20 @@ def run_test_case():
     pyautogui.moveTo(740, 651, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
     pyautogui.click(button="left") 
     time.sleep(5)
+#คลิกปุ่มยืนยัน
 
     pyautogui.moveTo(690, 651, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
     pyautogui.click(button="left") 
     time.sleep(6)
 
+#คลิกรับมาพอดี
     pyautogui.moveTo(574, 652, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
     pyautogui.click(button="left") 
     time.sleep(8)
 
-    pyautogui.moveTo(522, 454, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
+
+#คลิกยืนยัน
+    pyautogui.moveTo(470, 425, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
     pyautogui.click(button="left") 
     time.sleep(4)
 

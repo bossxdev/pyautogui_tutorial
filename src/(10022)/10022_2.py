@@ -45,47 +45,51 @@ def run_test_case():
     time.sleep(2)
 
    #คลิกเลือกค่าธรรมเนียมนักเรียนใหม่
-    pyautogui.click(479, 456, button="left")
+    pyautogui.click(381, 343, button="left")
     time.sleep(20)
 
 
 
+    #กรอกราบละเอียดรหัสอ้างอิง
     pyautogui.write("11111111111119")
     pyautogui.press('enter')
     time.sleep(2)
 
-    # pyautogui.write("1234567893434")
-    # pyautogui.press('enter')
-    # time.sleep(2)
+    pyautogui.write("125607001171311267")
+    pyautogui.press('enter')
+    time.sleep(2)
+
+#รอกรอกเบอร์โทรศัพจากเครื่อง edc 
+
 
     pyautogui.write("110.75")
     time.sleep(2)
-    pyautogui.moveTo(746, 134) 
-    pyautogui.click(button="left") 
-    time.sleep(2)
-
-    pyautogui.moveTo(746, 134) 
-    pyautogui.click(button="left") 
-    time.sleep(2)
-
-
-    # pyautogui.moveTo(746, 134) 
-    # pyautogui.click(button="left") 
-    # time.sleep(2)
     
-    #  #กดรับเงินสด
-    # pyautogui.moveTo(746, 134) 
-    # pyautogui.click(button="left") 
-    # time.sleep(2)
+  #คลิกปุ่มยืนยันทำรายการ
 
-    # pyautogui.write("1000")
-    # time.sleep(2)
+    pyautogui.moveTo(680, 646, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
+    pyautogui.click(button="left") 
+    time.sleep(5)
 
-    # pyautogui.press('enter')
-    # time.sleep(2)
+    pyautogui.moveTo(740, 651, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
+    pyautogui.click(button="left") 
+    time.sleep(5)
+#คลิกปุ่มยืนยัน
 
-    # pyautogui.press('enter')
-    # time.sleep(2)
+    pyautogui.moveTo(690, 651, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
+    pyautogui.click(button="left") 
+    time.sleep(6)
+
+#คลิกรับมาพอดี
+    pyautogui.moveTo(574, 652, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
+    pyautogui.click(button="left") 
+    time.sleep(8)
+
+
+#คลิกยืนยัน
+    pyautogui.moveTo(470, 425, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
+    pyautogui.click(button="left") 
+    time.sleep(4)
 
 
 
