@@ -1,5 +1,8 @@
 from openpyxl import load_workbook
 from datetime import datetime
+
+from src.constants.constant import DEFAULT_COLUMN
+
 import os
 
 class ExcelOperations:
@@ -28,7 +31,7 @@ class ExcelOperations:
             for update in updates:
                 self.sheet.cell(
                     row=update["row"], 
-                    column=18,
+                    column={DEFAULT_COLUMN},
                     value=update["value"]
                 )
             return True
