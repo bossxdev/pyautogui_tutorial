@@ -33,7 +33,7 @@ def run_test_case():
     print("เริ่มการทดสอบ...")
 
     
-    pyautogui.moveTo(746, 134) 
+    pyautogui.moveTo(740, 149) 
     pyautogui.click(button="left") 
     time.sleep(2)
 
@@ -41,42 +41,58 @@ def run_test_case():
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("0455560000899")
-    time.sleep(2)
+    pyautogui.write("045556000089900")
+    pyautogui.press('enter')
 
-    pyautogui.moveTo(746, 134) 
-    pyautogui.click(button="left") 
-    time.sleep(2)
+    time.sleep(14)
 
 
-    pyautogui.write("2000020010155")
-    pyautogui.press("enter")
-    time.sleep(2)
 
-    pyautogui.write("4711316837755")
-    pyautogui.press("enter")
-    time.sleep(2)
+#    #คลิกเลือกโครงการพลิกพื้น
+#     pyautogui.click(467, 281, button="left")
+#     time.sleep(5)
+
+
+#กรอกราบละเอียดรหัสอ้างอิง
+    pyautogui.write("2000020010157")
+    pyautogui.press('enter')
+    time.sleep(8)
+    pyautogui.write("4711316837757")
+    pyautogui.press('enter')
+    time.sleep(8)
+
+
+#รอกรอกเบอร์โทรศัพจากเครื่อง edc 
+
 
     pyautogui.write("5000")
     time.sleep(2)
+    
+ #คลิกปุ่มยืนยันทำรายการ
 
-
-
-
-    pyautogui.moveTo(746, 134) 
+    pyautogui.moveTo(680, 646, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
     pyautogui.click(button="left") 
-    time.sleep(2)
+    time.sleep(5)
 
-    time.sleep(2)
-    pyautogui.moveTo(746, 134) 
+    pyautogui.moveTo(740, 651, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
     pyautogui.click(button="left") 
-    time.sleep(2)
+    time.sleep(5)
+#คลิกปุ่มยืนยัน
 
-    pyautogui.moveTo(746, 134) 
+    pyautogui.moveTo(690, 651, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
     pyautogui.click(button="left") 
-    time.sleep(2)
+    time.sleep(6)
 
- 
+#คลิกรับมาพอดี
+    pyautogui.moveTo(574, 652, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
+    pyautogui.click(button="left") 
+    time.sleep(8)
+
+
+#คลิกยืนยัน
+    pyautogui.moveTo(470, 425, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
+    pyautogui.click(button="left") 
+    time.sleep(4)
 
 
     print("การทดสอบเสร็จสมบูรณ์")
