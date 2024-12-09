@@ -70,7 +70,7 @@ def cleanup():
     # log_handler(MODULE_NAME["PYAUTOGUI_TUTORIAL"], log_level="INFO", log_message="เริ่มต้นกระบวนการคืนค่าระบบ...")
     # ตัวอย่าง: ปิดแอปพลิเคชันด้วยการจำลองการกดปุ่ม
     # pyautogui.hotkey('alt', 'f4')  # ปิดหน้าต่างปัจจุบัน
-    # log_handler(MODULE_NAME["PYAUTOGUI_TUTORIAL"], log_level="INFO", log_message="กระบวนการคืนค่าระบบเสร็จสิ้น")
+    # log_handler(MODULE_NAME["PYAUTOGUI_TUTORIAL"], log_level="INFO", log_message="กระบวนการคืนค่าระบบเสร็จสิ้น\n")
 
 # เรียกใช้ฟังก์ชันหลัก
 if __name__ == "__main__":
