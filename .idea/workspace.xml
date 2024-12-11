@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b631a8cf-28d9-4d29-b6a3-3d0997382718" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/(10022)/10022_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/(10022)/10022_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/(10022)/10022_3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/(10042)/10042_00.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/(10112)/10112_11.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/(10121)/10121_00.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/(10121)/10121_01.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/(10299)/10299_00.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/(10426)/10426_00.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/(10835)/10835_02.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/(10842)/10842_00.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/(157)/157_01.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/(157)/157_02.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/(242)/S02.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/(337)/337_01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(10121)/10121_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(10418)/10418_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(10418)/10418_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(10418)/10418_03.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(10835)/10835_03.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(577)/ค่าสหกรณ์ออมทรัพย์ครูสมุทรฯ.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(595)/มูลนิธิสิรินธรราชวิทยาลัย.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/(595)/มูลนิธิสิรินธรราชวิทยาลัย.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(616)/มูลนิธิพระครูบาน้อย.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(626)/มหาวิทยาลัยพะเยา_06.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(626)/มหาวิทยาลัยพะเยา_08.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(626)/มหาวิทยาลัยพะเยา_09.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(626)/มหาวิทยาลัยพะเยา_12.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(650)/ออลล์เทรนนิ่ง_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(659)/หลวงพ่อกัณหา_02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(687)/Enconcept_00.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/(701)/มหาวิทยาลัยราชภัฎชัยภูมิ.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/10014/10014_1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/10014/10014_3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/10014/EDC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/10014/Screenshot 2024-12-09 125059.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/readExcel/readExcelTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/readExcel/readExcelTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/(10014)/10014_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/(10835)/10835_01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/(10426)/10426_00.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/(10426)/10426_00.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="naphadon" />
+                    <option name="lastUsedInstant" value="1733909868" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="naphadon_merge" />
+                    <option name="lastUsedInstant" value="1733909867" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2q46nTXIsJmAMkTSqzCoJzQTZys" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-c69650fc56ca-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15619.17" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b631a8cf-28d9-4d29-b6a3-3d0997382718" name="Changes" comment="" />
+      <created>1733909666706</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733909666706</updated>
+      <workItem from="1733909669972" duration="30000" />
+      <workItem from="1733909831070" duration="125000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
