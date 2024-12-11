@@ -55,7 +55,7 @@ def run_test_case():
         # ตรวจสอบการแสดงผลภายใน 20 วินาที
         start_time = time.time()
         timeout = 20  # เวลารอสูงสุด 20 วินาที
-        image_path = 'C:/Users/himma/Automatetest/pyautogui_tutorial/src/10014/Screenshot 2024-12-09 125059.jpg'
+        image_path = 'EDC.png' # ระบุเส้นทางของไฟล์ภาพจากชื่อได้เลยเพราะอยู่ในโฟลเดอร์เดียวกัน
 
         if not check_image_existence(image_path):
             return  # หากไฟล์ภาพไม่สามารถเปิดได้ ให้หยุดการทำงาน
