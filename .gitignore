@@ -1,2 +1,12 @@
+# Ignore IDE files
+.idea
 .vscode
-test_result.png
+
+# Ignore All (png) files
+*.png
+
+# Ignore All (xlsx) files
+*.xlsx
+
+# Ignore All (log) files
+*.log

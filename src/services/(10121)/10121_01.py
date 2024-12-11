@@ -33,7 +33,7 @@ def run_test_case():
     print("เริ่มการทดสอบ...")
 
     
-    pyautogui.moveTo(740, 149) 
+    pyautogui.moveTo(746, 134) 
     pyautogui.click(button="left") 
     time.sleep(2)
 
@@ -41,58 +41,38 @@ def run_test_case():
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("099400001123701")
-    pyautogui.press('enter')
-
-    time.sleep(5)
-
-
-
-#    #คลิกเลือกโครงการรายใหญ่
-#     pyautogui.click(467, 281, button="left")
-#     time.sleep(5)
-
-
-#กรอกราบละเอียดรหัสอ้างอิง
-    pyautogui.write("1101401205272")
-    pyautogui.press('enter')
+    pyautogui.write("0994000011237")
     time.sleep(2)
 
-    pyautogui.write("125607001171311267")
+   #คลิกเลือกโครงการพลิกพื้น
+    pyautogui.click(479, 456, button="left")
+    time.sleep(20)
+
+    pyautogui.write("12345678901")
     pyautogui.press('enter')
     time.sleep(2)
+ 
 
-#รอกรอกเบอร์โทรศัพจากเครื่อง edc 
 
-
-    pyautogui.write("100.26")
+    pyautogui.write("49000")
     time.sleep(2)
-    
- #คลิกปุ่มยืนยันทำรายการ
-
-    pyautogui.moveTo(680, 646, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
+    pyautogui.moveTo(746, 134) 
     pyautogui.click(button="left") 
-    time.sleep(5)
+    time.sleep(2)
 
-    pyautogui.moveTo(740, 651, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
+    pyautogui.moveTo(746, 134) 
     pyautogui.click(button="left") 
-    time.sleep(5)
-#คลิกปุ่มยืนยัน
+    time.sleep(2)
 
-    pyautogui.moveTo(690, 651, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
+
+    time.sleep(2)
+
+    pyautogui.moveTo(746, 134) 
     pyautogui.click(button="left") 
-    time.sleep(6)
-
-#คลิกรับมาพอดี
-    pyautogui.moveTo(574, 652, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
+    time.sleep(2)
+    pyautogui.moveTo(746, 134) 
     pyautogui.click(button="left") 
-    time.sleep(8)
-
-
-#คลิกยืนยัน
-    pyautogui.moveTo(470, 425, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
-    pyautogui.click(button="left") 
-    time.sleep(4)
+    time.sleep(2)
 
 
     print("การทดสอบเสร็จสมบูรณ์")
