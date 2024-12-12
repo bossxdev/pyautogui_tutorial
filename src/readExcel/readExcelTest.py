@@ -84,13 +84,8 @@ def main():
 
     # ข้อมูลที่ต้องการอัปเดต
     updates = [
-<<<<<<< HEAD
-        {"row": 768, "column": 18, "value": "test"},
-        {"row": 787, "column": 18, "value": ""},
-=======
         {"row": 667, "column": 18, "value": "Test_comment"},
         {"row": 740, "column": 18, "value": "Test_comment2 555"},
->>>>>>> d075a86f84f7e36490ac88e26c098e6fa0f40e84
     ]
 
     # อัพเดทข้อมูล
