@@ -2,6 +2,8 @@
 import pyautogui
 import time  # ใช้สำหรับหน่วงเวลา (delay)
 
+
+
 # ฟังก์ชันหลักสำหรับทดสอบระบบ
 def main():
     """
@@ -13,6 +15,8 @@ def main():
 
         # 2. ขั้นตอนการทดสอบ
         run_test_case()
+
+
     except Exception as e:
         print(f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}")
 
@@ -32,62 +36,39 @@ def run_test_case():
     """
     print("เริ่มการทดสอบ...")
 
-    #คลิกปุ่มกรอกบางโค้ด
-    pyautogui.moveTo(740, 149, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
+    
+    pyautogui.moveTo(746, 134) #ปุ่มกรอกบาร์โค้ด
     pyautogui.click(button="left") 
-    time.sleep(5)
-#กรอกรหัสบารโค้ด
-    pyautogui.keyDown('shift')
-    pyautogui.press('\\')
-
-    pyautogui.keyUp('shift')
-    pyautogui.write("010754600005902")
     time.sleep(3)
+
+    
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("004")
+    pyautogui.write("0993000177967")
+    time.sleep(2)
+
+   
+    pyautogui.click(479, 456, button="left")
+    time.sleep(30)
+
+    pyautogui.click(377, 559, button="left")
+    pyautogui.write("3500")
     time.sleep(3)
-    pyautogui.keyDown('shift')
-    pyautogui.press('\\')
-    pyautogui.keyUp('shift')
-    pyautogui.write("00463020012")
-    time.sleep(3)
-    pyautogui.keyDown('shift')
-    pyautogui.press('\\')
-    pyautogui.keyUp('shift')
-    pyautogui.write("1632500")
-    pyautogui.press('enter')
-    time.sleep(35)
 
-
-
-
-#คลิกปุ่มยืนยันทำรายการ
-
-    pyautogui.moveTo(680, 646, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
-    pyautogui.click(button="left") 
+    pyautogui.click(679, 641, button="left")
     time.sleep(5)
 
-    pyautogui.moveTo(740, 651, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
-    pyautogui.click(button="left") 
+    pyautogui.click(729, 646, button="left")
     time.sleep(5)
-#คลิกปุ่มยืนยัน
 
-    pyautogui.moveTo(690, 651, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
-    pyautogui.click(button="left") 
-    time.sleep(6)
+    pyautogui.click(671, 644, button="left")
+    time.sleep(5)
 
-#คลิกรับมาพอดี
-    pyautogui.moveTo(574, 652, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
-    pyautogui.click(button="left") 
-    time.sleep(8)
+    pyautogui.click(560, 639, button="left")
+    time.sleep(5)
 
-
-#คลิกยืนยัน
-    pyautogui.moveTo(470, 425, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
-    pyautogui.click(button="left") 
-    time.sleep(4)
+    pyautogui.click(486, 427, button="left")
 
     print("การทดสอบเสร็จสมบูรณ์")
 if __name__ == "__main__":
