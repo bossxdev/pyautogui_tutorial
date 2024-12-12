@@ -1,18 +1,29 @@
 import pyautogui
 import time
 
+<<<<<<< HEAD
+=======
+from src.utils.utility_func import click, log_action, write_text
+
+
+>>>>>>> 0b74e9b7c316517812f2d4aa1929b41ac4266fd3
 def main():
     try:
         setup_environment()
         run_test_case()
     except Exception as e:
         print(f"[ERROR] เกิดข้อผิดพลาดในโปรแกรมหลัก: {e}")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0b74e9b7c316517812f2d4aa1929b41ac4266fd3
 
 def setup_environment():
     print("[INFO] เริ่มต้นการตั้งค่าระบบ...")
     time.sleep(2)
     print("[INFO] การตั้งค่าเสร็จสิ้น")
 
+<<<<<<< HEAD
 def log_action(action, details):
     print(f"[LOG] {action}: {details}")
 
@@ -33,6 +44,8 @@ def write_text(text, delay=2, description=""):
     except Exception as e:
         log_action("Error", f"เกิดข้อผิดพลาดในการพิมพ์ข้อความ {text}: {e}")
         raise
+=======
+>>>>>>> 0b74e9b7c316517812f2d4aa1929b41ac4266fd3
 
 def run_test_case():
     try:
@@ -53,6 +66,7 @@ def run_test_case():
         write_text("5000", delay=3, description="กรอกจำนวนเงิน")
 
         click((668, 637), delay=5, description="กดปุ่มยืนยันทำรายการ")
+<<<<<<< HEAD
         
         click((750, 636), delay=5, description="กดปุ่มยืนยันหน้าทวนข้อมูล")
         
@@ -60,6 +74,15 @@ def run_test_case():
         
         click((558, 633), delay=5, description="กดปุ่มรับพอดี")
         
+=======
+
+        click((750, 636), delay=5, description="กดปุ่มยืนยันหน้าทวนข้อมูล")
+
+        click((675, 636), delay=5, description="กดปุ่มชำระเงิน")
+
+        click((558, 633), delay=5, description="กดปุ่มรับพอดี")
+
+>>>>>>> 0b74e9b7c316517812f2d4aa1929b41ac4266fd3
         click((490, 430), delay=5, description="กดปุ่มยืนยันชำระเงิน")
 
         print("[INFO] การทดสอบเสร็จสมบูรณ์")
@@ -67,6 +90,10 @@ def run_test_case():
     except Exception as e:
         log_action("Error", f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}")
         raise
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0b74e9b7c316517812f2d4aa1929b41ac4266fd3
 
 if __name__ == "__main__":
     main()

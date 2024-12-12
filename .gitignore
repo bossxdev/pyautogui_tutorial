@@ -1,5 +1,5 @@
 # Ignore IDE files
-.idea
+/.idea/
 .vscode
 
 # Ignore All (png) files

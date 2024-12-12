@@ -53,5 +53,3 @@ def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None
 
     # บันทึก log message ถ้ามีการระบุ
     if log_message: log.log(log_level, log_message)
-
-    return log

@@ -4,6 +4,7 @@ import time
 from src.constants.constant import MODULE_NAME
 from utils.log_handler import log_handler
 
+
 # ฟังก์ชันหลักสำหรับทดสอบระบบ
 def main():
     """
@@ -12,7 +13,7 @@ def main():
     try:
         # 1. การตั้งค่าเบื้องต้น
         setup_environment()
-        
+
         # 2. ขั้นตอนการทดสอบ
         run_test_case()
 
@@ -20,9 +21,11 @@ def main():
         # verify_results()
 
     except Exception as e:
-        log_handler(MODULE_NAME["PYAUTOGUI_TUTORIAL"], log_level="ERROR", log_message=f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}\n")
+        log_handler(MODULE_NAME["PYAUTOGUI_TUTORIAL"], log_level="ERROR",
+                    log_message=f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}\n")
     finally:
         cleanup()
+
 
 # ฟังก์ชันสำหรับการตั้งค่าเริ่มต้น
 def setup_environment():
@@ -35,6 +38,7 @@ def setup_environment():
     # pyautogui.doubleClick(x=100, y=200)  # ดับเบิลคลิกที่ตำแหน่งเพื่อเปิดแอป
     time.sleep(2)  # รอให้ระบบพร้อมก่อนดำเนินการถัดไป
     log_handler(MODULE_NAME["PYAUTOGUI_TUTORIAL"], log_level="INFO", log_message="การตั้งค่าเสร็จสิ้น")
+
 
 # ฟังก์ชันสำหรับขั้นตอนการทดสอบ
 def run_test_case():
@@ -51,6 +55,7 @@ def run_test_case():
     pyautogui.press('enter')  # กดปุ่ม Enter
     log_handler(MODULE_NAME["PYAUTOGUI_TUTORIAL"], log_level="INFO", log_message="การทดสอบเสร็จสมบูรณ์")
 
+
 # ฟังก์ชันสำหรับตรวจสอบผลลัพธ์
 def verify_results():
     """
@@ -60,7 +65,9 @@ def verify_results():
     # ตัวอย่าง: จับภาพหน้าจอเพื่อดูผลลัพธ์
     screenshot = pyautogui.screenshot()
     screenshot.save("test_result.png")  # บันทึกภาพหน้าจอเป็นไฟล์
-    log_handler(MODULE_NAME["PYAUTOGUI_TUTORIAL"], log_level="INFO", log_message="การตรวจสอบเสร็จสิ้น ผลลัพธ์บันทึกใน test_result.png")
+    log_handler(MODULE_NAME["PYAUTOGUI_TUTORIAL"], log_level="INFO",
+                log_message="การตรวจสอบเสร็จสิ้น ผลลัพธ์บันทึกใน test_result.png")
+
 
 # ฟังก์ชันสำหรับคืนค่าระบบหลังการทดสอบ
 def cleanup():
@@ -71,6 +78,7 @@ def cleanup():
     # ตัวอย่าง: ปิดแอปพลิเคชันด้วยการจำลองการกดปุ่ม
     # pyautogui.hotkey('alt', 'f4')  # ปิดหน้าต่างปัจจุบัน
     # log_handler(MODULE_NAME["PYAUTOGUI_TUTORIAL"], log_level="INFO", log_message="กระบวนการคืนค่าระบบเสร็จสิ้น\n")
+
 
 # เรียกใช้ฟังก์ชันหลัก
 if __name__ == "__main__":
