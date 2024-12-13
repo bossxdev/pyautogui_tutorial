@@ -1,13 +1,12 @@
-
 import pyautogui
 import time
+
+from src.utils.utility_func import click, log_action, write_text
 
 def main():
     try:  
         setup_environment()
-        
-        run_test_case()
-
+        run_test_case()     
     except Exception as e:
         print(f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}")
 
@@ -17,40 +16,39 @@ def setup_environment():
     print("การตั้งค่าเสร็จสิ้น")
     
 def run_test_case():
+    try:
+        print("[INFO] เริ่มการทดสอบ...")
     
-    print("เริ่มการทดสอบ...")
-    
-    pyautogui.click(746, 134)
-    time.sleep(3)
+        click((746, 134), delay=3, description="คลิกปุ่มกรอกบาร์โค้ด")
 
+        log_action("Write", "พิมพ์อักษรพิเศษ | ")
+        pyautogui.keyDown('shift')
+        pyautogui.press('\\')
+        pyautogui.keyUp('shift')
+        write_text("3470000000000", delay=2, description="กรอกบาร์โค้ด")
+        
+        click((490, 470), delay=20, description="คลิกปุ่มยืนยัน pop up บาร์โค้ด")
+        
+        write_text("20000", delay=3, description="กรอกจำนวนเงิน")
+        
+        # flow การชำระเงิน
+        click((670, 640),delay=3, description="กดปุ่มยืนยันทำรายการ")
+        
+        click((750, 636), delay=5, description="กดปุ่มยืนยันหน้าทวนข้อมูล")
+        
+        click((675, 636), delay=5, description="กดปุ่มชำระเงิน")
+        
+        click((558, 633), delay=5, description="กดปุ่มรับพอดี")
+        
+        click((490, 430), delay=5, description="กดปุ่มยืนยันชำระเงิน")
+        # flow การชำระเงิน
+        
+        print("[INFO] การทดสอบเสร็จสมบูรณ์")
+        
+    except Exception as e:
+        log_action("Error", f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}")
+        raise
     
-    pyautogui.keyDown('shift')
-    pyautogui.press('\\')
-    pyautogui.keyUp('shift')
-    pyautogui.write("3470000000000")
-    time.sleep(2)
-    
-    pyautogui.click(490, 470, button="left")
-    time.sleep(20)
-    
-    pyautogui.write("20000")
-    time.sleep(3)
-    
-    pyautogui.click(670, 640, button="left")
-    time.sleep(3)
-    
-    pyautogui.click(740, 646, button="left")
-    time.sleep(3)
-    
-    pyautogui.click(700, 645, button="left")
-    time.sleep(5)
-    
-    pyautogui.click(560, 634, button="left")
-    time.sleep(3)
-    
-    pyautogui.click(488, 442, button="left")
-    time.sleep(3)
-    
-    print("การทดสอบเสร็จสมบูรณ์")
+
 if __name__ == "__main__":
     main()
