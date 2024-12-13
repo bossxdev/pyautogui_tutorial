@@ -2,6 +2,7 @@ import pyautogui
 import time
 import cv2
 import numpy as np
+import os
 
 from src.constants.constant import CURRENT_DIR
 from src.utils.utility_func import get_image_path
@@ -58,7 +59,7 @@ def run_test_case():
         # ตรวจสอบการแสดงผลภายใน 20 วินาที
         start_time = time.time()
         timeout = 20  # เวลารอสูงสุด 20 วินาที
-        image_path = get_image_path(CURRENT_DIR, 'EDC.png')
+        image_path = get_image_path(os.path.dirname(__file__), 'EDC.png')
 
         if not check_image_existence(image_path):
             return  # หากไฟล์ภาพไม่สามารถเปิดได้ ให้หยุดการทำงาน
