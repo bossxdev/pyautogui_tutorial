@@ -4,7 +4,6 @@ import cv2
 import numpy as np
 import os
 
-from src.constants.constant import CURRENT_DIR
 from src.utils.utility_func import get_image_path
 
 
