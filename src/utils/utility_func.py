@@ -1,5 +1,6 @@
 import pyautogui
 import time
+import os
 
 
 def log_action(action, details):
@@ -24,3 +25,7 @@ def write_text(text, delay=2, description=""):
     except Exception as e:
         log_action("Error", f"เกิดข้อผิดพลาดในการพิมพ์ข้อความ {text}: {e}")
         raise
+
+
+def get_image_path(current_dir, image_name=""):
+    return os.path.join(current_dir, image_name)

@@ -1,6 +1,4 @@
-# ค่าคงที่สำหรับโปรเจกต์
-
-# ค่าคงที่ชื่อโมดูล
+# ชื่อโมดูล
 MODULE_NAME = {
     "PYAUTOGUI_TUTORIAL": "pyautogui_tutorial",
 }
