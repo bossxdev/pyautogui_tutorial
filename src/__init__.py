@@ -2,7 +2,7 @@ import pyautogui
 import time
 
 from src.constants.constant import MODULE_NAME
-from utils.log_handler import log_handler
+from src.utils.log_handler import log_handler
 
 
 # ฟังก์ชันหลักสำหรับทดสอบระบบ
