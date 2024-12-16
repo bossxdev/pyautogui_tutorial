@@ -1,0 +1,12 @@
+README.md
+setup.py
+pyautogui_tutorial.egg-info/PKG-INFO
+pyautogui_tutorial.egg-info/SOURCES.txt
+pyautogui_tutorial.egg-info/dependency_links.txt
+pyautogui_tutorial.egg-info/requires.txt
+pyautogui_tutorial.egg-info/top_level.txt
+src/CSCODE_242 copy.py
+src/CSCODE_242.py
+src/FindPositon.py
+src/__init__.py
+src/pyautogui_tutorial.py
