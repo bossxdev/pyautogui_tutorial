@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: pyautogui_tutorial
+Version: 1.0
+Requires-Python: >=3.6
+Requires-Dist: opencv-python
+Requires-Dist: pyautogui
+Requires-Dist: numpy
+Requires-Dist: openpyxl

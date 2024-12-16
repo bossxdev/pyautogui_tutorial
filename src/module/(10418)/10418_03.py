@@ -1,6 +1,7 @@
 # นำเข้าไลบรารีที่จำเป็น
 import pyautogui
 import time  # ใช้สำหรับหน่วงเวลา (delay)
+from src.utils.utility_func import click, write_text, log_action
 
 # ฟังก์ชันหลักสำหรับทดสอบระบบ
 def main():
@@ -13,8 +14,9 @@ def main():
 
         # 2. ขั้นตอนการทดสอบ
         run_test_case()
+
     except Exception as e:
-        print(f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}")
+        log_action("Error", f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}")
 
 # ฟังก์ชันสำหรับการตั้งค่าเริ่มต้น
 def setup_environment():
@@ -32,63 +34,50 @@ def run_test_case():
     """
     print("เริ่มการทดสอบ...")
 
-    #คลิกปุ่มกรอกบางโค้ด
-    pyautogui.moveTo(740, 149, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
-    pyautogui.click(button="left") 
-    time.sleep(5)
-#กรอกรหัสบารโค้ด
-    pyautogui.keyDown('shift')
-    pyautogui.press('\\')
+    # คลิกปุ่มกรอกบาร์โค้ด
+    click((740, 149), delay=5, description="คลิกปุ่มกรอกบาร์โค้ด")
 
-    pyautogui.keyUp('shift')
-    pyautogui.write("010754600005903")
-    time.sleep(3)
+    # กรอกรหัสบาร์โค้ด
+    log_action("Write", "พิมพ์บาร์โค้ด 010754600005903")
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("004")
-    time.sleep(3)
+    write_text("010754600005903", delay=3, description="กรอกบาร์โค้ด 1")
+
+    log_action("Write", "พิมพ์รหัส 004")
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("00463020012")
-    time.sleep(3)
+    write_text("004", delay=3, description="กรอกรหัส 2")
+
+    log_action("Write", "พิมพ์เบอร์โทร 00463020012")
     pyautogui.keyDown('shift')
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
-    pyautogui.write("1632511")
+    write_text("00463020012", delay=3, description="กรอกเบอร์โทร 3")
+
+    log_action("Write", "พิมพ์รหัส 1632500")
+    pyautogui.keyDown('shift')
+    pyautogui.press('\\')
+    pyautogui.keyUp('shift')
+    write_text("1632500", delay=3, description="กรอกรหัส 4")
     pyautogui.press('enter')
     time.sleep(35)
 
+    # คลิกปุ่มยืนยันทำรายการ
+    click((680, 646), delay=5, description="คลิกปุ่มยืนยันทำรายการ")
+    click((740, 651), delay=5, description="คลิกปุ่มยืนยันหน้าทวนข้อมูล")
 
+    # คลิกปุ่มยืนยัน
+    click((690, 651), delay=6, description="คลิกปุ่มยืนยัน")
 
+    # คลิกรับพอดี
+    click((574, 652), delay=8, description="คลิกปุ่มรับพอดี")
 
-#คลิกปุ่มยืนยันทำรายการ
-
-    pyautogui.moveTo(680, 646, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
-    pyautogui.click(button="left") 
-    time.sleep(5)
-
-    pyautogui.moveTo(740, 651, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
-    pyautogui.click(button="left") 
-    time.sleep(5)
-#คลิกปุ่มยืนยัน
-
-    pyautogui.moveTo(690, 651, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
-    pyautogui.click(button="left") 
-    time.sleep(6)
-
-#คลิกรับมาพอดี
-    pyautogui.moveTo(574, 652, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
-    pyautogui.click(button="left") 
-    time.sleep(8)
-
-
-#คลิกยืนยัน
-    pyautogui.moveTo(470, 425, duration=0.5)  # เพิ่มเวลาในการเคลื่อนที่
-    pyautogui.click(button="left") 
-    time.sleep(4)
+    # คลิกยืนยัน
+    click((470, 425), delay=4, description="คลิกปุ่มยืนยันชำระเงิน")
 
     print("การทดสอบเสร็จสมบูรณ์")
+
 if __name__ == "__main__":
     main()

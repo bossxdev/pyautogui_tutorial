@@ -1,22 +1,19 @@
-# นำเข้าไลบรารีที่จำเป็น
 import pyautogui
-import time  # ใช้สำหรับหน่วงเวลา (delay)
+import time
 
-# ฟังก์ชันหลักสำหรับทดสอบระบบ
+from src.utils.utility_func import click, log_action, write_text
+
 def main():
     """
     ฟังก์ชันหลักที่ใช้ในการควบคุมการทำงานของ Automated Test
     """
     try:
-        # 1. การตั้งค่าเบื้องต้น
         setup_environment()
-
-        # 2. ขั้นตอนการทดสอบ
         run_test_case()
     except Exception as e:
-        print(f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}")
+        log_action("Error", f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}")
 
-# ฟังก์ชันสำหรับการตั้งค่าเริ่มต้น
+
 def setup_environment():
     """
     ฟังก์ชันสำหรับตั้งค่าการทดสอบ เช่น เปิดแอปพลิเคชันหรือเตรียมหน้าต่าง
@@ -25,56 +22,56 @@ def setup_environment():
     time.sleep(2)
     print("การตั้งค่าเสร็จสิ้น")
 
-# ฟังก์ชันสำหรับขั้นตอนการทดสอบ
+
 def run_test_case():
     """
     ฟังก์ชันสำหรับรันขั้นตอนการทดสอบ เช่น คลิกปุ่ม กรอกฟอร์ม หรือจำลองการทำงาน
     """
-    print("เริ่มการทดสอบ...")
+    try:
+        print("[INFO] เริ่มการทดสอบ...")
 
-    
-    pyautogui.moveTo(746, 134) 
-    pyautogui.click(button="left") 
-    time.sleep(2)
+        # คลิกปุ่มกรอกบาร์โค้ด
+        click((740, 149), delay=5, description="คลิกปุ่มกรอกบาร์โค้ด")
+
+        # กรอกรหัสบาร์โค้ด
+        log_action("Write", "พิมพ์อักษรพิเศษ | ")
+        pyautogui.keyDown('shift')
+        pyautogui.press('\\')
+        pyautogui.keyUp('shift')
+        write_text("020553200042302", delay=3, description="กรอกบาร์โค้ดส่วนแรก")
+
+        pyautogui.keyDown('shift')
+        pyautogui.press('\\')
+        pyautogui.keyUp('shift')
+        write_text("14689007083", delay=20, description="กรอกบาร์โค้ดส่วนที่สอง")
+
+        pyautogui.keyDown('shift')
+        pyautogui.press('\\')
+        pyautogui.keyUp('shift')
+        write_text("4900000", delay=6, description="กรอกบาร์โค้ดส่วนที่สาม")
+        pyautogui.press('enter')
+
+        # คลิกปุ่มยืนยันทำรายการ
+        click((680, 646), delay=5, description="กดปุ่มยืนยันทำรายการ")
+
+        # คลิกปุ่มยืนยันหน้าทวนข้อมูล
+        click((740, 651), delay=5, description="กดปุ่มยืนยันหน้าทวนข้อมูล")
+
+        # คลิกปุ่มยืนยัน
+        click((690, 651), delay=6, description="กดปุ่มยืนยัน")
+
+        # คลิกรับพอดี
+        click((574, 652), delay=8, description="กดปุ่มรับพอดี")
+
+        # คลิกยืนยัน
+        click((470, 425), delay=4, description="กดปุ่มยืนยันชำระเงิน")
+
+        print("[INFO] การทดสอบเสร็จสมบูรณ์")
+
+    except Exception as e:
+        log_action("Error", f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}")
+        raise
 
 
-    pyautogui.keyDown('shift')
-    pyautogui.press('\\')
-    pyautogui.keyUp('shift')
-    pyautogui.write("0205532000423")
-    time.sleep(2)
-
-    pyautogui.click(746, 134,button="left") 
-
-
-   #คลิกเลือกรถยนต์
-    pyautogui.click(479, 456, button="left")
-    time.sleep(20)
-
-
-    pyautogui.write("004500023")
-    pyautogui.press('enter')
-    time.sleep(2)
-
-    pyautogui.click(479, 456, button="left")
-    time.sleep(20)
-
-    pyautogui.click(479, 456, button="left")
-    time.sleep(20)
-
-    pyautogui.click(479, 456, button="left")
-    time.sleep(20)
-
-    pyautogui.click(479, 456, button="left")
-    time.sleep(20)
-
-    pyautogui.write("49015")
-    time.sleep(2)
-
-    pyautogui.click(479, 456, button="left")
-    time.sleep(20)
-
-
-    print("การทดสอบเสร็จสมบูรณ์")
 if __name__ == "__main__":
     main()
