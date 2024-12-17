@@ -1,6 +1,12 @@
 import logging
 import os
 
+
+def do_something_critical(log_level: str = "DEBUG"):
+    print (f"Critical Error: {log_level}")
+    return None
+
+
 def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None):
     """
     ฟังก์ชันสำหรับสร้าง Log โดยรับพารามิเตอร์ log_name, level, และ log_message
@@ -11,7 +17,7 @@ def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None
 
     # กำหนดเส้นทางโฟลเดอร์เก็บ log
     log_folder = f"../logs/{log_name}"
-    os.makedirs(log_folder, exist_ok=True)  # สร้างโฟลเดอร์ใหม่ถ้ายังไม่มี
+    os.makedirs(log_folder, exist_ok=True)
 
     # แปลงระดับ log ที่รับเข้ามาเป็นค่าที่สามารถใช้ได้
     log_levels = {
@@ -30,7 +36,13 @@ def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None
 
     # ตรวจสอบว่ามี handler อยู่แล้วหรือไม่
     if not log.hasHandlers():
-        log.setLevel(log_level)
+
+        # TODO: Validate log level critical test
+        if log_level == logging.CRITICAL:
+            do_something_critical(log_level)
+            log.setLevel(log_level)
+        else:
+            log.setLevel(log_level)
 
         # สร้าง StreamHandler สำหรับแสดงผลใน console
         stream_handler = logging.StreamHandler()
