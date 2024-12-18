@@ -10,3 +10,6 @@
 
 # Ignore All (log) files
 *.log
+
+# Ignore All (egg-info) files
+/pyautogui_tutorial.egg-info/
