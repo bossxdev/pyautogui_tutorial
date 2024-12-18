@@ -1,10 +1,21 @@
 import logging
 import os
+import pyautogui
+
+import os
+import pyautogui
+from datetime import datetime
 
 
-def do_something_critical(log_level: str = "DEBUG"):
-    print (f"Critical Error: {log_level}")
-    return None
+def critical_level_validate(log_name: str):
+    log_image = f"../logs/{log_name}"
+    os.makedirs(log_image, exist_ok=True)
+
+    screenshot = pyautogui.screenshot()
+
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
+    screenshot.save(f"{log_image}/{log_name}_image-file_{timestamp}.png")
 
 
 def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None):
@@ -15,7 +26,6 @@ def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None
     :param log_message: ข้อความที่ต้องการบันทึกเมื่อสร้าง log เสร็จ
     """
 
-    # กำหนดเส้นทางโฟลเดอร์เก็บ log
     log_folder = f"../logs/{log_name}"
     os.makedirs(log_folder, exist_ok=True)
 
@@ -28,18 +38,15 @@ def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None
         "CRITICAL": logging.CRITICAL,
     }
 
-    # ตั้งค่าระดับของ log
     log_level = log_levels.get(log_level.upper(), logging.DEBUG)
 
-    # สร้าง log
     log = logging.getLogger(log_name)
 
     # ตรวจสอบว่ามี handler อยู่แล้วหรือไม่
     if not log.hasHandlers():
 
-        # TODO: Validate log level critical test
         if log_level == logging.CRITICAL:
-            do_something_critical(log_level)
+            critical_level_validate(log_name)
             log.setLevel(log_level)
         else:
             log.setLevel(log_level)
