@@ -2,10 +2,7 @@ import pyautogui
 import time
 from src.utils.utility_func import click, write_text
 from src.utils.log_handler import log_handler
-from pip._vendor.rich import traceback
-import traceback  # นำเข้าโมดูล traceback
-import os
-import cv2
+import traceback  
 
 def monitor_image_display(image_path):
     # เริ่มต้นนับเวลา
@@ -23,14 +20,14 @@ def monitor_image_display(image_path):
         except Exception as e:
             print(f"เกิดข้อผิดพลาดในการจับภาพหน้าจอ: {e}")
             log_handler("automation_test", log_level="ERROR", log_message=f"เกิดข้อผิดพลาดในการตรวจสอบภาพ: {e}")
-            return False  # หากเกิดข้อผิดพลาดในการจับภาพ
 
-        time.sleep(1)  # รอ 1 วินาทีแล้วตรวจสอบใหม่
+            return False  # หากเกิดข้อผิดพลาดในการจับภาพ
 
     # หากหมดเวลา 20 วินาทีโดยไม่มีการแสดงผล
     print("ข้อมูลไม่ถูกต้อง หรือหน้าจอไม่แสดงผลลัพธ์ที่คาดหวัง")
     log_handler("automation_test", log_level="ERROR", log_message="ไม่พบภาพที่คาดหวังภายใน 20 วินาที")
     return False
+
 
 def main():
     """
@@ -44,6 +41,7 @@ def main():
         log_handler("automation_test", log_level="ERROR", log_message=f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}")
         print(f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}")
 
+
 def setup_environment():
     """
     ฟังก์ชันสำหรับตั้งค่าระบบก่อนเริ่มการทดสอบ
@@ -51,6 +49,7 @@ def setup_environment():
     log_handler("automation_test", log_level="INFO", log_message="เริ่มต้นการตั้งค่าระบบ...")
     time.sleep(2)
     log_handler("automation_test", log_level="INFO", log_message="การตั้งค่าเสร็จสิ้น")
+
 
 def run_test_case():
     """
