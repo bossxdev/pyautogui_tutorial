@@ -21,17 +21,14 @@ def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None
         "ERROR": logging.ERROR,
         "CRITICAL": logging.CRITICAL,
     }
-
     # ตั้งค่าระดับของ log
     log_level = log_levels.get(log_level.upper(), logging.DEBUG)
-
     # สร้าง log
     log = logging.getLogger(log_name)
 
     # ตรวจสอบว่ามี handler อยู่แล้วหรือไม่
     if not log.hasHandlers():
         log.setLevel(log_level)
-
         # สร้าง StreamHandler สำหรับแสดงผลใน console
         stream_handler = logging.StreamHandler()
         stream_handler.setLevel(log_level)
@@ -39,7 +36,6 @@ def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None
             logging.Formatter("%(asctime)s [%(levelname)s]  %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
         )
         log.addHandler(stream_handler)
-
         # สร้างชื่อไฟล์ log ตามวันที่และเวลา
         log_filename = f"{log_folder}/{log_name}_logfile.log"
 
@@ -50,6 +46,5 @@ def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None
             logging.Formatter("%(asctime)s [%(levelname)s]  %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
         )
         log.addHandler(file_handler)
-
     # บันทึก log message ถ้ามีการระบุ
     if log_message: log.log(log_level, log_message)
