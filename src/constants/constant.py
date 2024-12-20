@@ -7,6 +7,7 @@ MODULE_NAME = {
 PATH = {
     "ASSET": "../asset/",
     "LOG": "../log/",
+    "EXPORT": "../exports",
 }
 
 # ค่าคงที่สำหรับการทดสอบ
