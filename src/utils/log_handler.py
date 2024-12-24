@@ -1,14 +1,14 @@
 import logging
-import os
-import pyautogui
 
 import os
 import pyautogui
 from datetime import datetime
 
+from src.constants.constant import PATH
+
 
 def critical_level_validate(log_name: str):
-    log_image = f"../logs/{log_name}"
+    log_image = f"{PATH['LOG']}{log_name}"
     os.makedirs(log_image, exist_ok=True)
 
     screenshot = pyautogui.screenshot()
@@ -26,7 +26,7 @@ def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None
     :param log_message: ข้อความที่ต้องการบันทึกเมื่อสร้าง log เสร็จ
     """
 
-    log_folder = f"../logs/{log_name}"
+    log_folder = f"{PATH['LOG']}{log_name}"
     os.makedirs(log_folder, exist_ok=True)
 
     # แปลงระดับ log ที่รับเข้ามาเป็นค่าที่สามารถใช้ได้
