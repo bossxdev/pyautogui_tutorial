@@ -18,8 +18,8 @@ def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None
         "DEBUG": logging.DEBUG,
         "INFO": logging.INFO,
         "WARNING": logging.WARNING,
-        "ERROR": logging.ERROR,
-        "CRITICAL": logging.CRITICAL,
+        "ERROR": logging.ERROR, # input error
+        "CRITICAL": logging.CRITICAL, # program hang
     }
 
     # ตั้งค่าระดับของ log
