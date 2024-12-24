@@ -3,6 +3,19 @@ import time
 from src.utils.utility_func import click, write_text
 from src.utils.log_handler import log_handler
 import traceback  
+import os
+
+
+# image_path = 'EDC.png'
+# absolute_path = os.path.abspath(image_path)
+
+# print(f"ตำแหน่งไฟล์ภาพ: {absolute_path}")
+
+# # ตรวจสอบว่าไฟล์สามารถเข้าถึงได้หรือไม่
+# if os.path.exists(absolute_path):
+#     print(f"ไฟล์ '{image_path}' สามารถเข้าถึงได้")
+# else:
+#     print(f"ไฟล์ '{image_path}' ไม่สามารถเข้าถึงได้")
 
 def monitor_image_display(image_path):
     # เริ่มต้นนับเวลา
@@ -13,8 +26,8 @@ def monitor_image_display(image_path):
         print("กำลังตรวจสอบภาพหน้าจอ...")
         try:
             # ใช้ pyautogui.locateOnScreen เพื่อจับภาพหน้าจอและตรวจสอบ
-            if pyautogui.locateOnScreen(image_path, confidence=0.8):  # เพิ่มค่าความมั่นใจหรือลดให้เหมาะสม
-             log_handler("automation_test", log_level="INFO", log_message=f"เกิดข้อผิดพลาดในการตรวจสอบภาพ: {e}")
+         if pyautogui.locateOnScreen(image_path, confidence=0.6):  # เพิ่มค่าความมั่นใจหรือลดให้เหมาะสม
+            log_handler("automation_test", log_level="INFO", log_message="พบภาพที่คาดหวังแล้ว")
  
             return True  # พบภาพที่ต้องการแล้ว
         except Exception as e:

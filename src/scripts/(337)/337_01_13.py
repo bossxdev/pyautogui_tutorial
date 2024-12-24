@@ -23,7 +23,29 @@ def setup_environment():
     time.sleep(2)
     log_handler("automation_test", log_level="INFO", log_message="การตั้งค่าเสร็จสิ้น")
 
+def monitor_image_display(image_path):
+    # เริ่มต้นนับเวลา
+    start_time = time.time()
+    timeout = 1  # เวลารอสูงสุด 20 วินาที
 
+    while time.time() - start_time < timeout:
+        print("กำลังตรวจสอบภาพหน้าจอ...")
+        try:
+            # ใช้ pyautogui.locateOnScreen เพื่อจับภาพหน้าจอและตรวจสอบ
+         if pyautogui.locateOnScreen(image_path, confidence=0.6):  # เพิ่มค่าความมั่นใจหรือลดให้เหมาะสม
+            log_handler("automation_test", log_level="INFO", log_message="พบภาพที่คาดหวังแล้ว")
+ 
+            return True  # พบภาพที่ต้องการแล้ว
+        except Exception as e:
+            print(f"เกิดข้อผิดพลาดในการจับภาพหน้าจอ: {e}")
+            log_handler("automation_test", log_level="ERROR", log_message=f"เกิดข้อผิดพลาดในการตรวจสอบภาพ: {e}")
+
+            return False  # หากเกิดข้อผิดพลาดในการจับภาพ
+
+    # หากหมดเวลา 20 วินาทีโดยไม่มีการแสดงผล
+    print("ข้อมูลไม่ถูกต้อง หรือหน้าจอไม่แสดงผลลัพธ์ที่คาดหวัง")
+    log_handler("automation_test", log_level="ERROR", log_message="ไม่พบภาพที่คาดหวังภายใน 20 วินาที")
+    return False
 def run_test_case():
     """
     ฟังก์ชันสำหรับรันขั้นตอนการทดสอบ เช่น คลิกปุ่ม กรอกฟอร์ม หรือจำลองการทำงาน
@@ -40,27 +62,30 @@ def run_test_case():
         pyautogui.press('\\')
         pyautogui.keyUp('shift')
         write_text("0105544096014", delay=3, description="กรอกบาร์โค้ด")
+                 # ตรวจสอบภาพหลังจากกรอกรหัสบาร์โค้ด
         pyautogui.press('enter')
 
         log_handler("automation_test", log_level="INFO", log_message="กรอกรหัสบาร์โค้ดสำเร็จ")
 
-        time.sleep(30)
+        time.sleep(20)
+     
 
  # คลิกเลือก service
-
+        if not monitor_image_display("EDC1.png"):  # ตรวจสอบภาพหลังจากกรอกบาร์โค้ด
+            log_handler("automation_test", log_level="ERROR", log_message="ข้อมูลไม่ถูกต้อง")
+            return
         click((361, 339), delay=5, description="คลิกเลือกประกันอีซี่")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกประกันอีซี่สำเร็จ")
-        
-        
-        write_text("1132202124125", delay=3, description="กรอกรหัสประชาชน")
-        pyautogui.press('enter')
-        
-        write_text("0856595555", delay=3, description="กรอกรหัสประชาชน")
-        pyautogui.press('enter')
-        
-
+  
+        click((404, 539), delay=5, description="คลิกเลือกประกันอีซี่")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกกรอกบัตรประชาชน")
+        time.sleep(20)
+        write_text("0997317465", delay=3, description="กรอกบาร์โค้ด")
+        time.sleep(5)
+         # ตรวจสอบภาพหลังจากกรอกรหัสบาร์โค้ด
+    
  # กรอกจำนวนเงิน
-        write_text("30000", delay=4, description="กรอกจำนวนเงิน")
+        write_text("100", delay=5, description="กรอกจำนวนเงิน")
         log_handler("automation_test", log_level="INFO", log_message="กรอกจำนวนเงินสำเร็จ")
 
    # คลิกปุ่มยืนยันทำรายการ
