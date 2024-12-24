@@ -8,7 +8,7 @@ def main():
     ฟังก์ชันหลักสำหรับการควบคุมการทำงานของ Automated Test
     """
     try:
-        log_handler("automation_test", log_level="DEBUG", log_message="เริ่มต้นการทำงาน Automated Testdddd")
+        log_handler("automation_test", log_level="DEBUG", log_message="เริ่มต้นการทำงาน Automated Test")
         setup_environment()
         run_test_case()
     except Exception as e:

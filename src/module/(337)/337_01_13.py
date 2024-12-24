@@ -44,23 +44,21 @@ def run_test_case():
 
         log_handler("automation_test", log_level="INFO", log_message="กรอกรหัสบาร์โค้ดสำเร็จ")
 
-        time.sleep(30)
+        time.sleep(20)
 
  # คลิกเลือก service
 
         click((361, 339), delay=5, description="คลิกเลือกประกันอีซี่")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกประกันอีซี่สำเร็จ")
-        
-        
-        write_text("1132202124125", delay=3, description="กรอกรหัสประชาชน")
-        pyautogui.press('enter')
-        
-        write_text("0856595555", delay=3, description="กรอกรหัสประชาชน")
-        pyautogui.press('enter')
-        
+        time.sleep(5)
 
+        click((404, 539), delay=5, description="คลิกเลือกประกันอีซี่")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกกรอกบัตรประชาชน")
+        time.sleep(25)
+
+    
  # กรอกจำนวนเงิน
-        write_text("30000", delay=4, description="กรอกจำนวนเงิน")
+        write_text("100", delay=5, description="กรอกจำนวนเงิน")
         log_handler("automation_test", log_level="INFO", log_message="กรอกจำนวนเงินสำเร็จ")
 
    # คลิกปุ่มยืนยันทำรายการ
