@@ -8,13 +8,24 @@ from src.constants.constant import PATH
 
 
 def critical_level_validate(script_name: str):
+    """
+    ฟังก์ชันสำหรับตรวจสอบและบันทึกภาพหน้าจอในกรณีที่เกิดข้อผิดพลาดระดับวิกฤติ
+    โดยจะสร้างโฟลเดอร์สำหรับบันทึกภาพหน้าจอและบันทึกภาพพร้อมใส่ Timestamp
+
+    Parameters:
+    script_name (str): ชื่อสคริปต์ที่ใช้สำหรับตั้งชื่อไฟล์ภาพหน้าจอ
+    """
+    # สร้างเส้นทางโฟลเดอร์สำหรับเก็บไฟล์ภาพหน้าจอ
     log_image = f"{PATH['LOG']}{script_name}"
     os.makedirs(log_image, exist_ok=True)
 
+    # จับภาพหน้าจอปัจจุบัน
     screenshot = pyautogui.screenshot()
 
+    # สร้าง Timestamp สำหรับเพิ่มในชื่อไฟล์ภาพ
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
+    # บันทึกภาพหน้าจอไปยังโฟลเดอร์ที่กำหนด
     screenshot.save(f"{log_image}/{script_name}_image-file_{timestamp}.png")
 
 
