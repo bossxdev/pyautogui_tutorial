@@ -2,16 +2,19 @@ from openpyxl import load_workbook
 from datetime import datetime
 import os
 
-from src.constants.constant import NSS_COMMENT_COLUMN, PATH, NSS_EXCEL_FILE
+from src.constants.constant import NSS_COMMENT_COLUMN, PATH, NSS_EXCEL_FILE, NSS_WORKSHEET_NAME
 
 
-def load_workbook_file(file_path):
+def load_workbook_file(file_path, sheet_name=None):
     """
     โหลดไฟล์ Excel และส่งคืน workbook กับ sheet
     """
     try:
         wb = load_workbook(file_path)
-        sheet = wb.active
+        if sheet_name:
+            sheet = wb[sheet_name]
+        else:
+            sheet = wb.active
         return wb, sheet
     except Exception as e:
         print(f"เกิดข้อผิดพลาดในการโหลดไฟล์ Excel: {str(e)}")
@@ -22,7 +25,7 @@ def update_multiple_cells(file_path, updates):
     """
     อัพเดทข้อมูลหลายเซลล์ในไฟล์ Excel
     """
-    wb, sheet = load_workbook_file(file_path)
+    wb, sheet = load_workbook_file(file_path, sheet_name=NSS_WORKSHEET_NAME)
     if not wb:
         return False
 
