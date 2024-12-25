@@ -18,12 +18,12 @@ def critical_level_validate(script_name: str):
     screenshot.save(f"{log_image}/{script_name}_image-file_{timestamp}.png")
 
 
-def state(script_name: str, log_level: str = "DEBUG", log_message: str = None):
+def state(script_name: str, log_level: str = "DEBUG", message: str = None):
     """
-    ฟังก์ชันสำหรับสร้าง Log โดยรับพารามิเตอร์ script_name, level, และ log_message
+    ฟังก์ชันสำหรับสร้าง Log โดยรับพารามิเตอร์ script_name, level, และ message
     :param script_name: ชื่อของ log
     :param log_level: ระดับของ log เช่น 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'
-    :param log_message: ข้อความที่ต้องการบันทึกเมื่อสร้าง log เสร็จ
+    :param message: ข้อความที่ต้องการบันทึกเมื่อสร้าง log เสร็จ
     """
 
     log_folder = f"{PATH['LOG']}{script_name}"
@@ -71,4 +71,4 @@ def state(script_name: str, log_level: str = "DEBUG", log_message: str = None):
         log.addHandler(file_handler)
 
     # บันทึก log message ถ้ามีการระบุ
-    if log_message: log.log(log_level, log_message)
+    if message: log.log(log_level, message)
