@@ -1,8 +1,3 @@
-# ชื่อโมดูล
-MODULE_NAME = {
-    "PYAUTOGUI_TUTORIAL": "pyautogui_tutorial",
-}
-
 # Path
 PATH = {
     "ASSET": "../asset/",
