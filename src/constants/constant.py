@@ -6,7 +6,7 @@ MODULE_NAME = {
 # Path
 PATH = {
     "ASSET": "../asset/",
-    "LOG": "../log/",
+    "LOG": "../logs",
     "EXPORT": "../exports",
 }
 
