@@ -1,8 +1,8 @@
 # Path
 PATH = {
-    "ASSET": "../asset/",
-    "LOG": "../logs/",
-    "EXPORT": "../exports",
+    "ASSET": "./src/asset/",
+    "LOG": "./src/logs/",
+    "EXPORT": "./src/exports",
 }
 
 # ค่าคงที่สำหรับการทดสอบ
