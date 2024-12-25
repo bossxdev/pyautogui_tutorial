@@ -7,26 +7,26 @@ from datetime import datetime
 from src.constants.constant import PATH
 
 
-def critical_level_validate(log_name: str):
-    log_image = f"{PATH['LOG']}{log_name}"
+def critical_level_validate(script_name: str):
+    log_image = f"{PATH['LOG']}{script_name}"
     os.makedirs(log_image, exist_ok=True)
 
     screenshot = pyautogui.screenshot()
 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
-    screenshot.save(f"{log_image}/{log_name}_image-file_{timestamp}.png")
+    screenshot.save(f"{log_image}/{script_name}_image-file_{timestamp}.png")
 
 
-def state(log_name: str, log_level: str = "DEBUG", log_message: str = None):
+def state(script_name: str, log_level: str = "DEBUG", log_message: str = None):
     """
-    ฟังก์ชันสำหรับสร้าง Log โดยรับพารามิเตอร์ log_name, level, และ log_message
-    :param log_name: ชื่อของ log
+    ฟังก์ชันสำหรับสร้าง Log โดยรับพารามิเตอร์ script_name, level, และ log_message
+    :param script_name: ชื่อของ log
     :param log_level: ระดับของ log เช่น 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'
     :param log_message: ข้อความที่ต้องการบันทึกเมื่อสร้าง log เสร็จ
     """
 
-    log_folder = f"{PATH['LOG']}{log_name}"
+    log_folder = f"{PATH['LOG']}{script_name}"
     os.makedirs(log_folder, exist_ok=True)
 
     # แปลงระดับ log ที่รับเข้ามาเป็นค่าที่สามารถใช้ได้
@@ -40,13 +40,13 @@ def state(log_name: str, log_level: str = "DEBUG", log_message: str = None):
 
     log_level = log_levels.get(log_level.upper(), logging.DEBUG)
 
-    log = logging.getLogger(log_name)
+    log = logging.getLogger(script_name)
 
     # ตรวจสอบว่ามี handler อยู่แล้วหรือไม่
     if not log.hasHandlers():
 
         if log_level == logging.CRITICAL:
-            critical_level_validate(log_name)
+            critical_level_validate(script_name)
             log.setLevel(log_level)
         else:
             log.setLevel(log_level)
@@ -60,7 +60,7 @@ def state(log_name: str, log_level: str = "DEBUG", log_message: str = None):
         log.addHandler(stream_handler)
 
         # สร้างชื่อไฟล์ log ตามวันที่และเวลา
-        log_filename = f"{log_folder}/{log_name}_logfile.log"
+        log_filename = f"{log_folder}/{script_name}_logfile.log"
 
         # สร้าง FileHandler สำหรับบันทึก log ลงไฟล์
         file_handler = logging.FileHandler(log_filename, encoding="utf-8")
