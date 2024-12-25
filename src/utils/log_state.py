@@ -18,7 +18,7 @@ def critical_level_validate(log_name: str):
     screenshot.save(f"{log_image}/{log_name}_image-file_{timestamp}.png")
 
 
-def log_handler(log_name: str, log_level: str = "DEBUG", log_message: str = None):
+def log_state(log_name: str, log_level: str = "DEBUG", log_message: str = None):
     """
     ฟังก์ชันสำหรับสร้าง Log โดยรับพารามิเตอร์ log_name, level, และ log_message
     :param log_name: ชื่อของ log
