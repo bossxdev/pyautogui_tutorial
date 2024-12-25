@@ -3,19 +3,7 @@ import time
 from src.utils.utility_func import click, write_text
 from src.utils.log_handler import log_handler
 import traceback  
-import os
 
-
-# image_path = 'EDC.png'
-# absolute_path = os.path.abspath(image_path)
-
-# print(f"ตำแหน่งไฟล์ภาพ: {absolute_path}")
-
-# # ตรวจสอบว่าไฟล์สามารถเข้าถึงได้หรือไม่
-# if os.path.exists(absolute_path):
-#     print(f"ไฟล์ '{image_path}' สามารถเข้าถึงได้")
-# else:
-#     print(f"ไฟล์ '{image_path}' ไม่สามารถเข้าถึงได้")
 
 def monitor_image_display(image_path):
     # เริ่มต้นนับเวลา
