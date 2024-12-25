@@ -1,7 +1,7 @@
 # Path
 PATH = {
     "ASSET": "../asset/",
-    "LOG": "../logs",
+    "LOG": "../logs/",
     "EXPORT": "../exports",
 }
 
