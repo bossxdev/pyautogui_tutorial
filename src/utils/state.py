@@ -36,49 +36,57 @@ def state(script_name: str, level: str = "DEBUG", message: str = None):
     :param level: ระดับของ log เช่น 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'
     :param message: ข้อความที่ต้องการบันทึกเมื่อสร้าง log เสร็จ
     """
-
     log_folder = f"{PATH['LOG']}{script_name}"
     os.makedirs(log_folder, exist_ok=True)
 
-    # แปลงระดับ log ที่รับเข้ามาเป็นค่าที่สามารถใช้ได้
-    levels = {
-        "DEBUG": logging.DEBUG,
-        "INFO": logging.INFO,
-        "WARNING": logging.WARNING,
-        "ERROR": logging.ERROR, # input error
-        "CRITICAL": logging.CRITICAL, # program hang
-    }
+    try:
+        # สร้าง logger
+        logger = logging.getLogger(script_name)
 
-    level = levels.get(level.upper(), logging.DEBUG)
+        # แปลงระดับ log ที่รับเข้ามาเป็นค่าที่สามารถใช้ได้
+        log_levels = {
+            "DEBUG": logging.DEBUG,
+            "INFO": logging.INFO,
+            "WARNING": logging.WARNING,
+            "ERROR": logging.ERROR,
+            "CRITICAL": logging.CRITICAL,
+        }
 
-    log = logging.getLogger(script_name)
+        # ตั้งค่าระดับของ logger
+        log_level = log_levels.get(level.upper(), logging.DEBUG)
+        logger.setLevel(log_level)
 
-    if level == logging.CRITICAL:
-        critical_level_validate(script_name)
-        log.setLevel(level)
-    else:
-        log.setLevel(level)
+        if log_level == logging.CRITICAL:
+            critical_level_validate(script_name)
 
     # ตรวจสอบว่ามี handler อยู่แล้วหรือไม่
     if not log.hasHandlers():
         # สร้าง StreamHandler สำหรับแสดงผลใน console
-        stream_handler = logging.StreamHandler()
-        stream_handler.setLevel(level)
-        stream_handler.setFormatter(
-            logging.Formatter("%(asctime)s [%(levelname)s]  %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
-        )
-        log.addHandler(stream_handler)
+        # stream_handler = logging.StreamHandler()
+        # stream_handler.setLevel(log_level)
+        # stream_handler.setFormatter(
+        #     logging.Formatter("%(asctime)s [%(levelname)s]  %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
+        # )
+        # log.addHandler(stream_handler)
 
         # สร้างชื่อไฟล์ log ตามวันที่และเวลา
-        log_filename = f"{log_folder}/{script_name}_logfile.log"
+        log_filename = f"{log_folder}/{script_name}.log"
 
         # สร้าง FileHandler สำหรับบันทึก log ลงไฟล์
         file_handler = logging.FileHandler(log_filename, encoding="utf-8")
-        file_handler.setLevel(level)  # ใช้ log level ที่ได้จากพารามิเตอร์
+        file_handler.setLevel(log_level)  # ใช้ log level ที่ได้จากพารามิเตอร์
         file_handler.setFormatter(
             logging.Formatter("%(asctime)s [%(levelname)s]  %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
         )
-        log.addHandler(file_handler)
+        if not logger.handlers:
+            logger.addHandler(file_handler)
 
-    # บันทึก log message ถ้ามีการระบุ
-    if message: log.log(level, message)
+        # บันทึก log message ถ้ามีการระบุ
+        if message:
+            logger.log(log_level, message)
+
+        return logger
+
+    except Exception as e:
+        print(f"เกิดข้อผิดพลาดในการสร้าง Logger: {str(e)}")
+        return None
