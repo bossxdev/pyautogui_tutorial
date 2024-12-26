@@ -59,8 +59,6 @@ def state(script_name: str, level: str = "DEBUG", message: str = None):
         if log_level == logging.CRITICAL:
             critical_level_validate(script_name)
 
-    # ตรวจสอบว่ามี handler อยู่แล้วหรือไม่
-    if not log.hasHandlers():
         # สร้าง StreamHandler สำหรับแสดงผลใน console
         # stream_handler = logging.StreamHandler()
         # stream_handler.setLevel(log_level)
