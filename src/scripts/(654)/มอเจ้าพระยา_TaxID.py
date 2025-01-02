@@ -28,17 +28,29 @@ def run_test_case():
         pyautogui.keyDown('shift')
         pyautogui.press('\\')
         pyautogui.keyUp('shift')
-        write_text("659020000000002", delay=2, description="กรอกบาร์โค้ด")
-        log_handler("test_case", "INFO", "กรอกบาร์โค้ด: 659020000000002")
+        write_text("0994000160267", delay=2, description="กรอกบาร์โค้ด")
+        log_handler("test_case", "INFO", "กรอกบาร์โค้ด: 0994000160267")
         
-        click((480, 464), delay=30, description="คลิกปุ่มยืนยัน pop up บาร์โค้ด")
+        click((480, 464), delay=20, description="คลิกปุ่มยืนยัน pop up บาร์โค้ด")
         log_handler("test_case", "INFO", "คลิกปุ่มยืนยัน pop up บาร์โค้ด")
         
-        log_handler("test_case", "INFO", "กรอกเบอร์โทรศัพท์ที่เครื่อง EDC")
-     
-        write_text("100", delay=3, description="กรอกจำนวนเงิน")
-        log_handler("test_case", "INFO", "กรอกจำนวนเงิน: 100")
+        click((400, 340), delay=10, description="คลิกเลือก Service")
+        log_handler("test_case", "INFO", "คลิกเลือก Service")
         
+        write_text("641041200311311267", delay=3, description="กรอกเลขที่ใบสมัคร")
+        log_handler("test_case", "INFO", "กรอกเลขที่ใบสมัคร")
+        
+        pyautogui.press("enter")
+        time.sleep(3)
+        
+        write_text("126990005202860", delay=3, description="กรอกเลขที่อ้างอิง")
+        log_handler("test_case", "INFO", "กรอกเลขที่อ้างอิง")
+        
+        pyautogui.press("enter")
+        time.sleep(30)
+        
+        write_text("100", delay=5, description="กรอกจำนวนเงิน")
+        log_handler("test_case", "INFO", "กรอกจำนวนเงิน: 100")
         
         # flow การชำระเงิน
         click((668, 637), delay=5, description="กดปุ่มยืนยันทำรายการ")
