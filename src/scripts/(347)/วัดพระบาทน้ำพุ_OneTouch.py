@@ -16,31 +16,32 @@ def setup_environment():
     log_handler("setup", "DEBUG", "เริ่มต้นการตั้งค่าระบบ...")
     time.sleep(2)
     log_handler("setup", "DEBUG", "การตั้งค่าเสร็จสิ้น")
-    
+
+
 def run_test_case():
     try:
         log_handler("test_case", "DEBUG", "เริ่มการทดสอบ...")
 
-        click((746, 134), delay=3, description="คลิกปุ่มกรอกบาร์โค้ด")
-        log_handler("test_case", "INFO", "คลิกปุ่มกรอกบาร์โค้ด")
-
-        log_handler("test_case", "INFO", "พิมพ์อักษรพิเศษ |")
-        pyautogui.keyDown('shift')
-        pyautogui.press('\\')
-        pyautogui.keyUp('shift')
-        write_text("659020000000002", delay=2, description="กรอกบาร์โค้ด")
-        log_handler("test_case", "INFO", "กรอกบาร์โค้ด: 659020000000002")
+        click((210, 140), delay=10, description="กดปุ่มเคาน์เตอร์เซอร์วิส")
+        log_handler("test_case", "INFO", "กดปุ่มเคาน์เตอร์เซอร์วิส")
         
-        click((480, 464), delay=30, description="คลิกปุ่มยืนยัน pop up บาร์โค้ด")
-        log_handler("test_case", "INFO", "คลิกปุ่มยืนยัน pop up บาร์โค้ด")
+        click((555,140), delay=5, description="กดปุ่มกลุ่มผู้ว่าจ้าง")
+        log_handler("test_case", "INFO", "กดปุ่มกลุ่มผู้ว่าจ้าง")
+        
+        click((460, 330), delay=3, description="กดปุ่มบริจาค/มูลนิธิ")
+        log_handler("test_case", "INFO", "กดปุ่มบริจาค/มูลนิธิ")
+        
+        click((220, 220), delay=3, description="กดปุ่มกลุ่มวัด")
+        log_handler("test_case", "INFO", "กดปุ่มกลุ่มวัด")
+        
+        click((210, 333), delay=30, description="กดปุ่มวัดพระบาทน้ำพุ")
+        log_handler("test_case", "INFO", "กดปุ่มวัดพระบาทน้ำพุ")
         
         log_handler("test_case", "INFO", "กรอกเบอร์โทรศัพท์ที่เครื่อง EDC")
-     
-        write_text("100", delay=3, description="กรอกจำนวนเงิน")
+        
+        write_text("100", delay=5, description="กรอกจำนวนเงิน")
         log_handler("test_case", "INFO", "กรอกจำนวนเงิน: 100")
-        
-        
-        # flow การชำระเงิน
+
         click((668, 637), delay=5, description="กดปุ่มยืนยันทำรายการ")
         log_handler("test_case", "INFO", "ยืนยันทำรายการ")
 
@@ -55,12 +56,11 @@ def run_test_case():
 
         click((490, 430), delay=5, description="กดปุ่มยืนยันชำระเงิน")
         log_handler("test_case", "INFO", "ยืนยันชำระเงิน")
-        # flow การชำระเงิน
-        
-        log_handler("main_process", "DEBUG", "การทดสอบเสร็จสมบูรณ์")
+
+        log_handler("test_case", "DEBUG", "การทดสอบเสร็จสมบูรณ์")
 
     except Exception as e:
-        log_handler("main_process", "DEBUG", f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {str(e)}")
+        log_handler("test_case", "DEBUG", f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {str(e)}")
         raise
 
 

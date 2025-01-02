@@ -28,51 +28,36 @@ def run_test_case():
         pyautogui.keyDown('shift')
         pyautogui.press('\\')
         pyautogui.keyUp('shift')
-        write_text("099400001030300", delay=2, description="กรอกบาร์โค้ด")
-        log_handler("test_case", "INFO", "กรอกบาร์โค้ด: 099400001030300")
+        write_text("0125555006666", delay=2, description="กรอกบาร์โค้ด")
+        log_handler("test_case", "INFO", "กรอกบาร์โค้ด: 012555500666601")
         
-
-        pyautogui.keyDown('shift')
-        pyautogui.press('\\')
-        pyautogui.keyUp('shift')
-        write_text("652301107831126744", delay=2, description="")
-        log_handler("test_case", "INFO", "กรอกบาร์โค้ด: 652301107831126744")
-        
-
-        pyautogui.keyDown('shift')
-        pyautogui.press('\\')
-        pyautogui.keyUp('shift')
-        write_text("201587001867097", delay=2, description="")
-        log_handler("test_case", "INFO", "กรอกบาร์โค้ด: 201587001867097")
-        
-
-        pyautogui.keyDown('shift')
-        pyautogui.press('\\')
-        pyautogui.keyUp('shift')
-        write_text("3000100", delay=2, description="")
-        log_handler("test_case", "INFO", "กรอกบาร์โค้ด: 3000100")
-        
-        click((480, 464), delay=35, description="กคลิกปุ่มยืนยัน pop up บาร์โค้ดด")
+        click((480, 464), delay=20, description="คลิกปุ่มยืนยัน pop up บาร์โค้ด")
         log_handler("test_case", "INFO", "คลิกปุ่มยืนยัน pop up บาร์โค้ด")
         
-        # #flow กรอกเงิน+ชำระเงิน
-        # pyautogui.write("30000") #---------เพิ่ม validate log ทุก action //  handle function //util
-        # time.sleep(3)
+        write_text("1234567", delay=3, description="กรอกรหัสพนักงาน")
+        log_handler("test_case", "INFO", "กรอกรหัสพนักงาน")
         
-        # pyautogui.click(700, 640, button="left")
-        # time.sleep(5)
+        pyautogui.press("enter")
+        time.sleep(30)
         
-        click((730, 645), delay=15, description="กดปุ่มยืนยันหน้าทวนข้อมูล")
+        log_handler("test_case", "INFO", "กรอกเบอร์โทรศัพท์ที่เครื่อง EDC")
+        
+        # flow การชำระเงิน
+        click((668, 637), delay=5, description="กดปุ่มยืนยันทำรายการ")
+        log_handler("test_case", "INFO", "ยืนยันทำรายการ")
+
+        click((750, 636), delay=5, description="กดปุ่มยืนยันหน้าทวนข้อมูล")
         log_handler("test_case", "INFO", "ยืนยันหน้าทวนข้อมูล")
-        
-        click((700, 640), delay=7, description="กดปุ่มชำระเงิน")
+
+        click((675, 636), delay=5, description="กดปุ่มชำระเงิน")
         log_handler("test_case", "INFO", "กดปุ่มชำระเงิน")
 
-        click((550, 640), delay=7, description="กดปุ่มรับพอดี")
+        click((558, 633), delay=5, description="กดปุ่มรับพอดี")
         log_handler("test_case", "INFO", "กดปุ่มรับพอดี")
-        
-        click((490, 433), delay=7, description="กดปุ่มยืนยันชำระเงิน")
+
+        click((490, 430), delay=5, description="กดปุ่มยืนยันชำระเงิน")
         log_handler("test_case", "INFO", "ยืนยันชำระเงิน")
+        # flow การชำระเงิน
         
         log_handler("main_process", "DEBUG", "การทดสอบเสร็จสมบูรณ์")
 
