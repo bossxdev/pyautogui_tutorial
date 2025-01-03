@@ -29,7 +29,6 @@ def critical_level_validate(script_name: str):
     # บันทึกภาพหน้าจอไปยังโฟลเดอร์ที่กำหนด
     screenshot.save(f"{log_image}/{script_name}_image-file_{timestamp}.png")
 
-    # TODO: Excel editor to save the image file path to the excel file
     result = {
         "row": script_name,
         "column": NSS_COMMENT_COLUMN,
