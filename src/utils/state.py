@@ -4,7 +4,7 @@ import os
 import pyautogui
 from datetime import datetime
 
-from src.constants.constant import PATH, NSS_COMMENT_COLUMN
+from src.constants.constant import PATH
 from src.utils.excel_editor import excel_editor
 
 
