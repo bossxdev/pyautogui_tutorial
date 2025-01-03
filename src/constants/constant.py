@@ -8,4 +8,4 @@ PATH = {
 # ค่าคงที่สำหรับการทดสอบ
 NSS_EXCEL_FILE = "[NSS-POSNewGen] Script Automate.xlsx"
 NSS_WORKSHEET_NAME = "pos_srv_new"
-NSS_COMMENT_COLUMN = 18
+NSS_COMMENT_COLUMN = 23
