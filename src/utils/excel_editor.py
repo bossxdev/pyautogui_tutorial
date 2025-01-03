@@ -3,7 +3,7 @@ from openpyxl.utils import column_index_from_string
 from datetime import datetime
 import os
 
-from src.constants.constant import PATH, NSS_EXCEL_FILE, NSS_WORKSHEET_NAME
+from src.constants.constant import PATH, NSS_EXCEL_FILE, NSS_WORKSHEET_NAME, NSS_COMMENT_COLUMN
 
 
 def update_cells(file_path, result):
@@ -22,8 +22,8 @@ def update_cells(file_path, result):
         for results in result:
             for row in ws.iter_rows(column):
                 for cell in row:
-                    if cell.value == results["row"]:
-                        ws.cell(row=cell.row, column=results["column"]).value = results["value"]
+                    if cell.value == results["cell"]:
+                        ws.cell(row=cell.row, column=NSS_COMMENT_COLUMN).value = results["value"]
                         return wb
 
         return None
@@ -32,15 +32,14 @@ def update_cells(file_path, result):
         return None
 
 
-def save_export(workbook, file_path, export_path=None):
+def save_export(workbook, file_path):
     """
     Export ไฟล์ Excel พร้อมระบุชื่อไฟล์
     """
     try:
-        if not export_path:
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            file_name = os.path.splitext(os.path.basename(file_path))[0]
-            export_path = f"{file_name}_exported_{timestamp}.xlsx"
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        file_name = os.path.splitext(os.path.basename(file_path))[0]
+        export_path = f"{file_name}_exported_{timestamp}.xlsx"
 
         export_dir = f"{PATH['EXPORT']}"
         if not os.path.exists(export_dir):
