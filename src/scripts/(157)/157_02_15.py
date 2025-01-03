@@ -44,7 +44,7 @@ def run_test_case():
 
         log_handler("automation_test", log_level="INFO", log_message="กรอกรหัสบาร์โค้ดสำเร็จ")
 
-        time.sleep(10)
+        time.sleep(15)
 
 
 #กรอก ref1

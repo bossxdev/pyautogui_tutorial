@@ -30,22 +30,25 @@ def run_test_case():
     try:
         log_handler("S02_15test", log_level="INFO", log_message="เริ่มการทดสอบ...")
 
-        #คลิกปุ่มเคาน์เตอร์เซอร์วิส
-        click((298, 131), delay=5, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
+       #คลิกปุ่มเคาน์เตอร์เซอร์วิส
+        click((207, 140), delay=10, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มเคาน์เตอร์เซอร์วิสสำเร็จ")
+        time.sleep(5)
        # คลิกปุ่มผู้ว่าจ้าง
-        click((560, 135), delay=5, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
+        click((570, 154), delay=7, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
         
-        write_text("รร.สาธิตฯปัญญาภิวัฒน์", delay=5, description="กรอกรร.สาธิตฯปัญญาภิวัฒน์")
-        log_handler("S02_15test", log_level="INFO", log_message="กรอกรร.สาธิตฯปัญญาภิวัฒน์สำเร็จ")
-        pyautogui.press('enter')
-
-   # คลิกเลือกมูลนิธิเพื่อนหญิง
-        click((298, 131), delay=5, description="คลิกเลือกรร.สาธิตฯปัญญาภิวัฒน์")
+        click((584, 331), delay=7, description="คลิกปุ่มการศึกษา/ติวเตอร์/มหาวิยาลัย")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มการศึกษา/ติวเตอร์/มหาวิยาลัยสำเร็จ")
+        # คลิกปุ่มผู้ว่าจ้าง
+        click((596, 216), delay=7, description="คลิกปุ่มโรงเรียน/วิทยาลัย")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มโรงเรียน/วิทยาลัยสำเร็จ")
+      
+   
+        click((214, 339), delay=5, description="คลิกเลือกรร.สาธิตฯปัญญาภิวัฒน์")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกรร.สาธิตฯปัญญาภิวัฒน์")
         time.sleep(10)
-        click((361, 339), delay=5, description="คลิกเลือกค่าธรรมเนียมนักเรียนเก่า")
+        click((407, 401), delay=5, description="คลิกเลือกค่าธรรมเนียมนักเรียนเก่า")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกค่าธรรมเนียมนักเรียนเก่าสำเร็จ")
         time.sleep(10)
         

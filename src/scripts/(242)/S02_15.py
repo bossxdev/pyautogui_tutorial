@@ -45,7 +45,7 @@ def run_test_case():
         log_handler("automation_test", log_level="INFO", log_message="กรอกรหัสบาร์โค้ดสำเร็จ")
 
         log_handler("automation_test", log_level="INFO", log_message="รอลูกค้ากรอกหมายเลขโทรศัพท์ที่เครื่องedc")
-        time.sleep(20)
+        time.sleep(30)
 
  # กรอกจำนวนเงิน
         write_text("50", delay=4, description="กรอกจำนวนเงิน")

@@ -30,19 +30,27 @@ def run_test_case():
     try:
         log_handler("S02_15test", log_level="INFO", log_message="เริ่มการทดสอบ...")
 
-        #คลิกปุ่มเคาน์เตอร์เซอร์วิส
-        click((298, 131), delay=5, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
+       #คลิกปุ่มเคาน์เตอร์เซอร์วิส
+        click((207, 140), delay=10, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มเคาน์เตอร์เซอร์วิสสำเร็จ")
+        time.sleep(5)
        # คลิกปุ่มผู้ว่าจ้าง
-        click((560, 135), delay=5, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
+        click((570, 154), delay=7, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
         
-        write_text("สำนักงานสัตวแพทยสภา", delay=5, description="กรอกสำนักงานสัตวแพทยสภา")
-        log_handler("S02_15test", log_level="INFO", log_message="กรอกสำนักงานสัตวแพทยสภาสำเร็จ")
-        pyautogui.press('enter')
-
-   # คลิกเลือกมูลนิธิเพื่อนหญิง
-        click((298, 131), delay=5, description="คลิกเลือกสำนักงานสัตวแพทยสภา")
+       # คลิกปุ่มผู้ว่าจ้าง
+        click((333, 217), delay=7, description="คลิกปุ่มสาธารณูโภค/ราชการ")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มสาธารณูโภค/ราชการสำเร็จ")
+        
+       # คลิกปุ่มผู้ว่าจ้าง
+        click((88, 219), delay=7, description="คลิกปุ่มสาธารณูโภค/ราชการ")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
+        
+        click((506, 649), delay=7, description="คลิกปุ่มถัดไป")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มถัดไปสำเร็จ")
+        
+        
+        click((347, 222), delay=5, description="คลิกเลือกสำนักงานสัตวแพทยสภา")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกสำนักงานสัตวแพทยสภา")
         time.sleep(10)
         # click((361, 339), delay=5, description="คลิกเลือกค่าธรรมเนียมต่างๆ")

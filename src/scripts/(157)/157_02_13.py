@@ -44,13 +44,13 @@ def run_test_case():
 
         log_handler("automation_test", log_level="INFO", log_message="กรอกรหัสบาร์โค้ดสำเร็จ")
 
-        time.sleep(30)
+        time.sleep(20)
 
  # คลิกเลือก service
 
         click((361, 339), delay=5, description="คลิกเลือกรถจักรยานยนต์")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกรถจักรยานยนต์สำเร็จ")
-
+        
 #กรอก ref1
         write_text("14689007083", delay=3, description="กรอกรหัสลูกค้า")
         log_handler("automation_test", log_level="INFO", log_message="กรอกรหัสลูกค้าสำเร็จ")

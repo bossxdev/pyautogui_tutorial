@@ -1,6 +1,7 @@
 import pyautogui
 import time  # ใช้สำหรับหน่วงเวลา (delay)
 from src.utils.utility_func import click, write_text, log_action
+from src.utils import log_handler
 
 def main():
     """
@@ -39,31 +40,36 @@ def run_test_case():
         pyautogui.press('\\')
         pyautogui.keyUp('shift')
         write_text("099300017796702", delay=0, description="กรอกบาร์โค้ด")
+        pyautogui.keyDown('shift')
+        pyautogui.press('\\')
+        pyautogui.keyUp('shift')
+        write_text("50", delay=5, description="กรอกหมายเลขโทรศัพท์")
         pyautogui.press('enter')
 
-        # รอลูกค้ากรอกหมายเลขโทรศัพท์ที่เครื่อง EDC
-        write_text("50", delay=5, description="กรอกหมายเลขโทรศัพท์")
-
-        # คลิกปุ่มยืนยันทำรายการ
+      # คลิกปุ่มยืนยันทำรายการ
         click((680, 646), delay=5, description="กดปุ่มยืนยันทำรายการ")
-
-        # คลิกปุ่มยืนยันหน้าทวนข้อมูล
         click((740, 651), delay=5, description="กดปุ่มยืนยันหน้าทวนข้อมูล")
+        log_handler("automation_test", log_level="INFO", log_message="กดปุ่มยืนยันทำรายการสำเร็จ")
 
-        # คลิกปุ่มยืนยัน
-        click((690, 651), delay=6, description="กดปุ่มยืนยัน")
+        click((690, 651), delay=6, description="กดปุ่มยืนยันชำระเงิน")
+        log_handler("automation_test", log_level="INFO", log_message="กดปุ่มชำระเงินสำเร็จ")
 
-        # คลิกรับพอดี
+        # คลิกปุ่มรับพอดี
         click((574, 652), delay=8, description="กดปุ่มรับพอดี")
+        log_handler("automation_test", log_level="INFO", log_message="กดปุ่มรับพอดีสำเร็จ")
 
-        # คลิกยืนยัน
-        click((470, 425), delay=4, description="กดปุ่มยืนยันชำระเงิน")
+        # คลิกปุ่มยืนยันการชำระเงิน
+        click((522, 454), delay=4, description="กดปุ่มยืนยันการชำระเงิน")
 
-        print("[INFO] การทดสอบเสร็จสมบูรณ์")
+        log_handler("automation_test", log_level="INFO", log_message="การชำระเงินเสร็จสมบูรณ์")
+
+        log_handler("automation_test", log_level="INFO", log_message="การทดสอบเสร็จสมบูรณ์")
 
     except Exception as e:
-        log_action("Error", f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}")
+        log_handler("automation_test", log_level="ERROR", log_message=f"เกิดข้อผิดพลาดระหว่างการทดสอบ: {e}")
         raise
+
 
 if __name__ == "__main__":
     main()
+

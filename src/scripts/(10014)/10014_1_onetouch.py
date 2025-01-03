@@ -30,22 +30,30 @@ def run_test_case():
     try:
         log_handler("S02_15test", log_level="INFO", log_message="เริ่มการทดสอบ...")
 
-        #คลิกปุ่มเคาน์เตอร์เซอร์วิส
-        click((298, 131), delay=5, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
+       #คลิกปุ่มเคาน์เตอร์เซอร์วิส
+        click((207, 140), delay=10, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มเคาน์เตอร์เซอร์วิสสำเร็จ")
+        time.sleep(5)
        # คลิกปุ่มผู้ว่าจ้าง
-        click((560, 135), delay=5, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
-        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
-        
-        write_text("บริษัท ไอ.ซี.ซี.อินเตอร์เนชั่นแนลจำกัด", delay=5, description="กรอกบริษัท ไอ.ซี.ซี.อินเตอร์เนชั่นแนลจำกัด")
-        log_handler("S02_15test", log_level="INFO", log_message="กรอกบริษัท ไอ.ซี.ซี.อินเตอร์เนชั่นแนลจำกัดสำเร็จ")
-        pyautogui.press('enter')
+        click((570, 154), delay=7, description="คลิกปุ่มกลุ่มผู้ว่าจ้าง")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มกลุ่มผู้ว่าจ้างสำเร็จ")
+        # คลิกปุ่มผู้ว่าจ้าง
+        click((208, 336), delay=7, description="คลิกปุ่มชำระค่าสินค้า/ขายตรง/หนังสือ")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มชำระค่าสินค้า/ขายตรง/หนังสือสำเร็จ")
+        # คลิกปุ่มผู้ว่าจ้าง
+        click((71, 221), delay=7, description="คลิกปุ่มชำระค่าสินค้า")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มชำระค่าสินค้าสำเร็จ")
+        # คลิกปุ่มผู้ว่าจ้าง
+        click((510, 649), delay=7, description="คลิกปุ่มหน้าถัดไป")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มหน้าถัดไปสำเร็จ")
+        time.sleep(5)
 
+        
    # คลิกเลือกมูลนิธิเพื่อนหญิง
-        click((298, 131), delay=5, description="คลิกเลือกบริษัท ไอ.ซี.ซี.อินเตอร์เนชั่นแนลจำกัด")
+        click((219, 224,), delay=5, description="คลิกเลือกบริษัท ไอ.ซี.ซี.อินเตอร์เนชั่นแนลจำกัด")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกบริษัท ไอ.ซี.ซี.อินเตอร์เนชั่นแนลจำกัดสำเร็จ")
         time.sleep(10)
-        click((361, 339), delay=5, description="คลิกเลือกค่าสินค้าร้านค้า")
+        click((360, 287), delay=5, description="คลิกเลือกค่าสินค้าร้านค้า")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกค่าสินค้าร้านค้า")
         time.sleep(10)
         

@@ -39,18 +39,19 @@ def run_test_case():
     pyautogui.press('\\')
     pyautogui.keyUp('shift')
     write_text("010554409601401", delay=0, description="กรอกบาร์โค้ด")
+    pyautogui.keyDown('shift')
+    pyautogui.press('\\')
+    pyautogui.keyUp('shift')
+    # รอลูกค้ากรอกหมายเลขโทรศัพท์ที่เครื่อง EDC
+    write_text("30000", delay=5, description="กรอกหมายเลขโทรศัพท์ที่เครื่อง EDC")
     pyautogui.press('enter')
     time.sleep(8)
-
     # คลิกที่ตำแหน่งหมายเลขโทรศัพท์
     click((405, 555), delay=5, description="คลิกตำแหน่งหมายเลขโทรศัพท์")
     write_text("0856595555", delay=5, description="กรอกหมายเลขโทรศัพท์")
     pyautogui.press('enter')
 
     time.sleep(7)
-
-    # รอลูกค้ากรอกหมายเลขโทรศัพท์ที่เครื่อง EDC
-    write_text("30000", delay=5, description="กรอกหมายเลขโทรศัพท์ที่เครื่อง EDC")
 
     # คลิกปุ่มยืนยันทำรายการ
     click((680, 646), delay=5, description="คลิกปุ่มยืนยันทำรายการ")

@@ -31,18 +31,21 @@ def run_test_case():
         log_handler("S02_15test", log_level="INFO", log_message="เริ่มการทดสอบ...")
 
         #คลิกปุ่มเคาน์เตอร์เซอร์วิส
-        click((298, 131), delay=5, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
+        click((207, 140), delay=10, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มเคาน์เตอร์เซอร์วิสสำเร็จ")
+        time.sleep(5)
        # คลิกปุ่มผู้ว่าจ้าง
-        click((560, 135), delay=5, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
+        click((570, 154), delay=7, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
         
-        write_text("ซีพีออลล์", delay=5, description="กรอกซีพีออลล์")
-        log_handler("S02_15test", log_level="INFO", log_message="กรอกซีพีออลล์สำเร็จ")
-        pyautogui.press('enter')
-
+        click((210, 341), delay=7, description="คลิกปุ่มชำระค่าสินค้า/ขายตรง/หนังสือ")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มชำระค่าสินค้า/ขายตรง/หนังสือสำเร็จ")
+        
+        click((79, 223), delay=7, description="คลิกเลือกชำระค่าสินค้า")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกชำระค่าสินค้าสำเร็จ")
+        
    # คลิกเลือกซีพีออลล์
-        click((298, 131), delay=5, description="คลิกเลือกซีพีออลล์")
+        click((464, 334), delay=7, description="คลิกเลือกซีพีออลล์")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกซีพีออลล์สำเร็จ")
         time.sleep(10)
      
@@ -52,7 +55,7 @@ def run_test_case():
         
         click((361, 339), delay=5, description="คลิกเลือกตู้บุญเติม")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกตู้บุญเติมสำเร็จ")
-
+        time.sleep(3)
 
         # กรอกจำนวนเงิน
         write_text("200", delay=5, description="กรอกจำนวนเงิน")

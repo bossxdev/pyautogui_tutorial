@@ -28,21 +28,24 @@ def run_test_case():
     ฟังก์ชันสำหรับรันขั้นตอนการทดสอบ เช่น คลิกปุ่ม กรอกข้อมูล หรือดำเนินการชำระเงิน
     """
     try:
-        log_handler("S02_15test", log_level="INFO", log_message="เริ่มการทดสอบ...")
-
+        log_handler("automation_test", log_level="INFO", log_message="เริ่มการทดสอบ...")
         #คลิกปุ่มเคาน์เตอร์เซอร์วิส
-        click((298, 131), delay=5, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
+           #คลิกปุ่มเคาน์เตอร์เซอร์วิส
+        click((212, 141), delay=10, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มเคาน์เตอร์เซอร์วิสสำเร็จ")
        # คลิกปุ่มผู้ว่าจ้าง
-        click((560, 135), delay=5, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
+        click((575, 153), delay=7, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
-        
-        write_text("มูลนิธิเพื่อนหญิง", delay=5, description="กรอกมูลนิธิเพื่อนหญิง")
-        log_handler("S02_15test", log_level="INFO", log_message="กรอกมูลนิธิเพื่อนหญิงสำเร็จ")
-        pyautogui.press('enter')
+        time.sleep(3)
+        click((454, 336), delay=7, description="คลิกปุ่มบริจาค/มูลนิธิ")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มบริจาค/มูลนิธิสำเร็จ")
+        time.sleep(3)
+        click((85, 226), delay=7, description="คลิกปุ่มกลุ่มมูลนิธิ")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มกลุ่มมูลนิธิสำเร็จ")
+        time.sleep(3)
 
    # คลิกเลือกมูลนิธิเพื่อนหญิง
-        click((298, 131), delay=5, description="คลิกเลือกมูลนิธิเพื่อนหญิง")
+        click((593, 217), delay=5, description="คลิกเลือกมูลนิธิเพื่อนหญิง")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกมูลนิธิเพื่อนหญิงสำเร็จ")
         time.sleep(10)
      

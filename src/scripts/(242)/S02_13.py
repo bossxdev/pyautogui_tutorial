@@ -44,15 +44,9 @@ def run_test_case():
 
         log_handler("automation_test", log_level="INFO", log_message="กรอกรหัสบาร์โค้ดสำเร็จ")
 
-        time.sleep(30)
-
- # คลิกเลือก service
-
-        click((361, 339), delay=5, description="คลิกเลือกรับบริจาคเงิน")
-        log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกรับบริจาคเงินสำเร็จ")
 
         log_handler("automation_test", log_level="INFO", log_message="รอลูกค้ากรอกหมายเลขโทรศัพท์ที่เครื่องedc")
-        time.sleep(20)
+        time.sleep(25)
 
  # กรอกจำนวนเงิน
         write_text("50", delay=4, description="กรอกจำนวนเงิน")

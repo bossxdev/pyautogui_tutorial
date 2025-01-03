@@ -39,10 +39,12 @@ def run_test_case():
         pyautogui.press('\\')
         pyautogui.keyUp('shift')
         write_text("010754200001112", delay=5, description="กรอกรหัสบาร์โค้ด")
+        pyautogui.press('enter')
+        time.sleep(15)
         log_handler("S02_15test", log_level="INFO", log_message="กรอกรหัสบาร์โค้ดสำเร็จ")
 
         # กรอกจำนวนเงิน
-        write_text("200", delay=5, description="กรอกจำนวนเงิน")
+        write_text("200", delay=7, description="กรอกจำนวนเงิน")
         log_handler("S02_15test", log_level="INFO", log_message="กรอกจำนวนเงินสำเร็จ")
 
         # คลิกปุ่มยืนยันทำรายการ

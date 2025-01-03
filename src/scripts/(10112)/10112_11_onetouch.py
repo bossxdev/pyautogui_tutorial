@@ -31,24 +31,24 @@ def run_test_case():
         log_handler("S02_15test", log_level="INFO", log_message="เริ่มการทดสอบ...")
 
         #คลิกปุ่มเคาน์เตอร์เซอร์วิส
-        click((298, 131), delay=5, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
+        click((207, 140), delay=10, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มเคาน์เตอร์เซอร์วิสสำเร็จ")
+        time.sleep(5)
        # คลิกปุ่มผู้ว่าจ้าง
-        click((560, 135), delay=5, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
+        click((570, 154), delay=7, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
-        
-        write_text("เทศบาลตำบลบางนายสี", delay=5, description="กรอกเทศบาลตำบลบางนายสี")
-        log_handler("S02_15test", log_level="INFO", log_message="กรอกเทศบาลตำบลบางนายสี")
-        pyautogui.press('enter')
+        # คลิกปุ่มผู้ว่าจ้าง
+        click((344, 217), delay=7, description="คลิกปุ่มสารณูปโภค/ราชการ")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มสารณูปโภค/ราชการสำเร็จ")
+        # คลิกปุ่มผู้ว่าจ้าง
+        click((457, 219), delay=7, description="คลิกปุ่มกลุ่ม อบต/เทศบาล")
+        log_handler("S02_15test", log_level="INFO", log_message="คคลิกปุ่มกลุ่ม อบต/เทศบาลสำเร็จ")
+     
 
-   # คลิกเลือกมูลนิธิเพื่อนหญิง
-        click((298, 131), delay=5, description="คลิกเลือกเทศบาลตำบลบางนายสี")
+        click((585, 221), delay=5, description="คลิกเลือกเทศบาลตำบลบางนายสี")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกเทศบาลตำบลบางนายสี")
         time.sleep(10)
-        click((361, 339), delay=5, description="คลิกเลือกค่านํ้าประปา")
-        log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกค่านํ้าประปาสำเร็จ")
-        time.sleep(10)
-        
+
         
         write_text("0138980105", delay=4, description="กรอกเลขที่ผู้ใช้นํ้า")
         log_handler("automation_test", log_level="INFO", log_message="กรอกเลขที่ผู้ใช้นํ้าสำเร็จ")

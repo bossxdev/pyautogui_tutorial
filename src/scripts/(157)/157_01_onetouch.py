@@ -31,26 +31,28 @@ def run_test_case():
         log_handler("S02_15test", log_level="INFO", log_message="เริ่มการทดสอบ...")
 
         #คลิกปุ่มเคาน์เตอร์เซอร์วิส
-        click((298, 131), delay=5, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
+        click((205, 136), delay=5, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มเคาน์เตอร์เซอร์วิสสำเร็จ")
        # คลิกปุ่มผู้ว่าจ้าง
-        click((560, 135), delay=5, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
+        time.sleep(3)
+        click((570, 154), delay=5, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
+    
+        click((220, 220), delay=5, description="คลิกปุ่มผ่อนค่างวด/เช่าซื้อ/ที่อยู่อาศัย")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มผ่อนค่างวด/เช่าซื้อ/ที่อยู่อาศัยสำเร็จ")
         
-        write_text("บ.เสริมธนาทรัพ์", delay=5, description="กรอกบ.เสริมธนาทรัพ์")
-        log_handler("S02_15test", log_level="INFO", log_message="กรอกบ.เสริมธนาทรัพ์สำเร็จ")
-        pyautogui.press('enter')
 
    # คลิกเลือกบ.เสริมธนาทรัพ์
-        click((298, 131), delay=5, description="คลิกเลือกบ.เสริมธนาทรัพ์")
+        click((724, 437), delay=5, description="คลิกเลือกบ.เสริมธนาทรัพ์")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกบ.เสริมธนาทรัพ์สำเร็จ")
-        time.sleep(10)
-     
-        click((361, 339), delay=5, description="คลิกเลือกรถยนต์")
+        time.sleep(3)
+
+        click((336, 284), delay=5, description="คลิกเลือกรถยนต์")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกรถยนต์สำเร็จ")
+        time.sleep(10)
 
 #กรอก ref1
-        write_text("15892450160", delay=3, description="กรอกรหัสลูกค้า")
+        write_text("15892450160", delay=5, description="กรอกรหัสลูกค้า")
         log_handler("automation_test", log_level="INFO", log_message="กรอกรหัสลูกค้าสำเร็จ")
         pyautogui.press('enter')
         log_handler("automation_test", log_level="INFO", log_message="รอลูกค้ากรอกหมายเลขโทรศัพท์ที่เครื่องedc")

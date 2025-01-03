@@ -44,24 +44,22 @@ def run_test_case():
 
         log_handler("automation_test", log_level="INFO", log_message="กรอกรหัสบาร์โค้ดสำเร็จ")
 
-        time.sleep(30)
+        time.sleep(20)
 
  # คลิกเลือก service
 
-        click((361, 339), delay=5, description="คลิกเลือกรถยนต์")
+        click((355, 287), delay=7, description="คลิกเลือกรถยนต์")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกรถยนต์สำเร็จ")
 
 #กรอก ref1
-        write_text("15892450160", delay=3, description="กรอกรหัสลูกค้า")
+        write_text("15892450160", delay=5, description="กรอกรหัสลูกค้า")
         log_handler("automation_test", log_level="INFO", log_message="กรอกรหัสลูกค้าสำเร็จ")
         pyautogui.press('enter')
-
-        pyautogui.press('enter')
         log_handler("automation_test", log_level="INFO", log_message="รอลูกค้ากรอกหมายเลขโทรศัพท์ที่เครื่องedc")
-        time.sleep(20)
+        time.sleep(25)
 
  # กรอกจำนวนเงิน
-        write_text("4900000", delay=4, description="กรอกจำนวนเงิน")
+        write_text("49000", delay=4, description="กรอกจำนวนเงิน")
         log_handler("automation_test", log_level="INFO", log_message="กรอกจำนวนเงินสำเร็จ")
 
    # คลิกปุ่มยืนยันทำรายการ

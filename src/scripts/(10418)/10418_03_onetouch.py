@@ -31,25 +31,33 @@ def run_test_case():
         log_handler("S02_15test", log_level="INFO", log_message="เริ่มการทดสอบ...")
 
         #คลิกปุ่มเคาน์เตอร์เซอร์วิส
-        click((298, 131), delay=5, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
+        click((207, 140), delay=10, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มเคาน์เตอร์เซอร์วิสสำเร็จ")
+        time.sleep(5)
        # คลิกปุ่มผู้ว่าจ้าง
-        click((560, 135), delay=5, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
+        click((570, 154), delay=7, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
         
-        write_text("ไมด้า เเอสเซ็ท", delay=5, description="กรอกไมด้า เเอสเซ็ท")
-        log_handler("S02_15test", log_level="INFO", log_message="กรอกไมด้า เเอสเซ็ท")
-        pyautogui.press('enter')
-
+        # คลิกปุ่มผู้ว่าจ้าง
+        click((198, 218), delay=7, description="คลิกปุ่มผ่อนค่างวด/เช่าซื้อ/ที่อยู่อาศัย")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มผ่อนค่างวด/เช่าซื้อ/ที่อยู่อาศัยสำเร็จ")
+        
+        
+        click((511, 648), delay=7, description="คลิกปุ่มถัดไป1")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มถัดไป1สำเร็จ")
+        
+        time.sleep(10)
+        click((511, 648), delay=7, description="คลิกปุ่มถัดไป2")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มถัดไป2สำเร็จ")
+        
    # คลิกเลือกมูลนิธิเพื่อนหญิง
-        click((298, 131), delay=5, description="คลิกเลือกไมด้า เเอสเซ็ท")
+        click((463, 571), delay=5, description="คลิกเลือกไมด้า เเอสเซ็ท")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกไมด้า เเอสเซ็ท")
         time.sleep(10)
       
-        click((361, 339), delay=5, description="คลิกเลือกชำระค่่าสินค้าเเละบริการ")
+        click((377, 458), delay=5, description="คลิกเลือกชำระค่่าสินค้าเเละบริการ")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกชำระค่่าสินค้าเเละบริการสำเร็จ")
         time.sleep(10)
-        
         
               
         write_text("004", delay=4, description="กรอกรหัสสาขา")

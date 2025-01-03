@@ -30,19 +30,20 @@ def run_test_case():
     try:
         log_handler("S02_15test", log_level="INFO", log_message="เริ่มการทดสอบ...")
 
-        #คลิกปุ่มเคาน์เตอร์เซอร์วิส
-        click((298, 131), delay=5, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
+       #คลิกปุ่มเคาน์เตอร์เซอร์วิส
+        click((207, 140), delay=10, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มเคาน์เตอร์เซอร์วิสสำเร็จ")
+        time.sleep(5)
        # คลิกปุ่มผู้ว่าจ้าง
-        click((560, 135), delay=5, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
+        click((570, 154), delay=7, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
-        
-        write_text("วัดป่าศรีถาวรนิมิต", delay=5, description="กรอกวัดป่าศรีถาวรนิมิต")
-        log_handler("S02_15test", log_level="INFO", log_message="กรอกวัดป่าศรีถาวรนิมิต")
-        pyautogui.press('enter')
+         # คลิกปุ่มผู้ว่าจ้าง
+        click((454, 331), delay=7, description="คลิกปุ่มบริจาค/มูลนิธิ")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
+      
 
    # คลิกเลือกมูลนิธิเพื่อนหญิง
-        click((298, 131), delay=5, description="คลิกเลือกวัดป่าศรีถาวรนิมิต")
+        click((91, 335), delay=5, description="คลิกเลือกวัดป่าศรีถาวรนิมิต")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกวัดป่าศรีถาวรนิมิต")
         time.sleep(10)
  

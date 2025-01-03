@@ -38,12 +38,21 @@ def run_test_case():
         pyautogui.keyDown('shift')
         pyautogui.press('\\')
         pyautogui.keyUp('shift')
-        write_text("010754200001112", delay=5, description="กรอกรหัสบาร์โค้ด")
+        write_text("0107542000011", delay=5, description="กรอกรหัสบาร์โค้ด")
+        pyautogui.press("enter")
+        time.sleep(15)
         log_handler("S02_15test", log_level="INFO", log_message="กรอกรหัสบาร์โค้ดสำเร็จ")
+        
+        click((494, 526), delay=5, description="คลิกไปหน้าถัดไป")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกไปหน้าถัดไป")
 
-        # กรอกจำนวนเงิน
+        
+        click((361, 339), delay=5, description="คลิกเลือกตู้บุญเติม")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกตู้บุญเติมสำเร็จ")
+
         write_text("200", delay=5, description="กรอกจำนวนเงิน")
         log_handler("S02_15test", log_level="INFO", log_message="กรอกจำนวนเงินสำเร็จ")
+
 
         # คลิกปุ่มยืนยันทำรายการ
         click((680, 646), delay=5, description="กดปุ่มยืนยันทำรายการ")

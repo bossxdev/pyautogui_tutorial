@@ -30,19 +30,28 @@ def run_test_case():
     try:
         log_handler("S02_15test", log_level="INFO", log_message="เริ่มการทดสอบ...")
 
-        #คลิกปุ่มเคาน์เตอร์เซอร์วิส
-        click((298, 131), delay=5, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
-        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มเคาน์เตอร์เซอร์วิสสำเร็จ")
-       # คลิกปุ่มผู้ว่าจ้าง
-        click((560, 135), delay=5, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
-        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
-        
-        write_text("ผ่าตัดเเก้ไขใบหน้าให้น้อง", delay=5, description="กรอกผ่าตัดเเก้ไขใบหน้าให้น้อง")
-        log_handler("S02_15test", log_level="INFO", log_message="กรอกผ่าตัดเเก้ไขใบหน้าให้น้อง")
-        pyautogui.press('enter')
 
-   # คลิกเลือกมูลนิธิเพื่อนหญิง
-        click((298, 131), delay=5, description="คลิกเลือกผ่าตัดเเก้ไขใบหน้าให้น้อง")
+       #คลิกปุ่มเคาน์เตอร์เซอร์วิส
+        click((207, 140), delay=10, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มเคาน์เตอร์เซอร์วิสสำเร็จ")
+        time.sleep(5)
+       # คลิกปุ่มผู้ว่าจ้าง
+        click((570, 154), delay=7, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
+            # คลิกปุ่มผู้ว่าจ้าง
+        click((470, 332), delay=7, description="คลิกปุ่มบริจาค/มูลนิธิ")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
+      
+            # คลิกปุ่มผู้ว่าจ้าง
+        click((82, 222), delay=7, description="คลิกปุ่มกลุ่มมูลนิธิ")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มกลุ่มมูลนิธิสำเร็จ")
+        
+            # คลิกปุ่มผู้ว่าจ้าง
+        click((517, 643), delay=7, description="คลิกปุ่มถัดไป")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มถัดไปสำเร็จ")
+        
+        # คลิกเลือกมูลนิธิเพื่อนหญิง
+        click((91, 561), delay=5, description="คลิกเลือกผ่าตัดเเก้ไขใบหน้าให้น้อง")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกผ่าตัดเเก้ไขใบหน้าให้น้อง")
         time.sleep(10)
  

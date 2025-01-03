@@ -31,24 +31,24 @@ def run_test_case():
         log_handler("automation_test", log_level="INFO", log_message="เริ่มการทดสอบ...")
         #คลิกปุ่มเคาน์เตอร์เซอร์วิส
            #คลิกปุ่มเคาน์เตอร์เซอร์วิส
-        click((298, 131), delay=5, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
+        click((212, 141), delay=10, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มเคาน์เตอร์เซอร์วิสสำเร็จ")
        # คลิกปุ่มผู้ว่าจ้าง
-        click((560, 135), delay=5, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
+        click((575, 153), delay=7, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
-        
-        write_text("มูลนิธิสันติสุธ", delay=5, description="กรอกมูลนิธิสันติสุธ")
-        log_handler("S02_15test", log_level="INFO", log_message="กรอกมูลนิธิสันติสุธสำเร็จ")
-        pyautogui.press('enter')
+        time.sleep(3)
+        click((454, 336), delay=7, description="คลิกปุ่มบริจาค/มูลนิธิ")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มบริจาค/มูลนิธิสำเร็จ")
+        time.sleep(3)
+        click((85, 226), delay=7, description="คลิกปุ่มกลุ่มมูลนิธิ")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มกลุ่มมูลนิธิสำเร็จ")
+        time.sleep(3)
 
    # คลิกเลือกมูลนิธิสันติสุธ
-        click((298, 131), delay=5, description="คลิกเลือกมูลนิธิสันติสุธ")
+        click((725, 200), delay=5, description="คลิกเลือกมูลนิธิสันติสุธ")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกมูลนิธิสันติสุธ")
-        time.sleep(10)
+        time.sleep(30)
  
-        click((361, 339), delay=5, description="คลิกเลือกรับบริจาค")
-        log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกรับบริจาค")
-        time.sleep(10)
         
         
         # กรอกจำนวนเงิน

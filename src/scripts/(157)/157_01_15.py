@@ -44,7 +44,7 @@ def run_test_case():
 
         log_handler("automation_test", log_level="INFO", log_message="กรอกรหัสบาร์โค้ดสำเร็จ")
 
-        time.sleep(10)
+        time.sleep(20)
 
 
 #กรอก ref1
@@ -55,7 +55,7 @@ def run_test_case():
         time.sleep(30)
 
  # กรอกจำนวนเงิน
-        write_text("4900000", delay=4, description="กรอกจำนวนเงิน")
+        write_text("49000", delay=4, description="กรอกจำนวนเงิน")
         log_handler("automation_test", log_level="INFO", log_message="กรอกจำนวนเงินสำเร็จ")
 
    # คลิกปุ่มยืนยันทำรายการ

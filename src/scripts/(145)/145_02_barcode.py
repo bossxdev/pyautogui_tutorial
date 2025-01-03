@@ -39,7 +39,11 @@ def run_test_case():
         pyautogui.press('\\')
         pyautogui.keyUp('shift')
         write_text("099300017400302", delay=2, description="กรอกรหัสบาร์โค้ด")
-
+        pyautogui.keyDown('shift')
+        pyautogui.press('\\')
+        pyautogui.keyUp('shift')
+        write_text("30025", delay=4, description="กรอกจำนวนเงิน")
+        log_handler("automation_test", log_level="INFO", log_message="กรอกจำนวนเงินสำเร็จ")
         # กดยืนยันบาร์โค้ด
         pyautogui.press('enter')
         log_handler("automation_test", log_level="INFO", log_message="กรอกรหัสบาร์โค้ดสำเร็จ")
@@ -47,8 +51,7 @@ def run_test_case():
         time.sleep(30)
 
         # กรอกจำนวนเงิน
-        write_text("300.25", delay=4, description="กรอกจำนวนเงิน")
-        log_handler("automation_test", log_level="INFO", log_message="กรอกจำนวนเงินสำเร็จ")
+      
 
         # คลิกปุ่มยืนยันทำรายการ
         click((680, 646), delay=5, description="กดปุ่มยืนยันทำรายการ")

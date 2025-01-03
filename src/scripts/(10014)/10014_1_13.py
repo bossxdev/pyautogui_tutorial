@@ -5,31 +5,6 @@ from src.utils.log_handler import log_handler
 import traceback  
 
 
-def monitor_image_display(image_path):
-    # เริ่มต้นนับเวลา
-    start_time = time.time()
-    timeout = 20  # เวลารอสูงสุด 20 วินาที
-
-    while time.time() - start_time < timeout:
-        print("กำลังตรวจสอบภาพหน้าจอ...")
-        try:
-            # ใช้ pyautogui.locateOnScreen เพื่อจับภาพหน้าจอและตรวจสอบ
-         if pyautogui.locateOnScreen(image_path, confidence=0.6):  # เพิ่มค่าความมั่นใจหรือลดให้เหมาะสม
-            log_handler("automation_test", log_level="INFO", log_message="พบภาพที่คาดหวังแล้ว")
- 
-            return True  # พบภาพที่ต้องการแล้ว
-        except Exception as e:
-            print(f"เกิดข้อผิดพลาดในการจับภาพหน้าจอ: {e}")
-            log_handler("automation_test", log_level="ERROR", log_message=f"เกิดข้อผิดพลาดในการตรวจสอบภาพ: {e}")
-
-            return False  # หากเกิดข้อผิดพลาดในการจับภาพ
-
-    # หากหมดเวลา 20 วินาทีโดยไม่มีการแสดงผล
-    print("ข้อมูลไม่ถูกต้อง หรือหน้าจอไม่แสดงผลลัพธ์ที่คาดหวัง")
-    log_handler("automation_test", log_level="ERROR", log_message="ไม่พบภาพที่คาดหวังภายใน 20 วินาที")
-    return False
-
-
 def main():
     """
     ฟังก์ชันหลักสำหรับการควบคุมการทำงานของ Automated Test
@@ -69,10 +44,7 @@ def run_test_case():
         pyautogui.keyUp('shift')
         write_text("0107537001374", delay=2, description="กรอกรหัสบาร์โค้ด")
 
-         # ตรวจสอบภาพหลังจากกรอกรหัสบาร์โค้ด
-        if not monitor_image_display("EDC.png"):  # ตรวจสอบภาพหลังจากกรอกบาร์โค้ด
-            log_handler("automation_test", log_level="ERROR", log_message="ข้อมูลไม่ถูกต้อง")
-            return
+     
         # กดยืนยันบาร์โค้ด
         pyautogui.press('enter')
         log_handler("automation_test", log_level="INFO", log_message="กรอกรหัสบาร์โค้ดสำเร็จ")

@@ -30,19 +30,31 @@ def run_test_case():
     try:
         log_handler("S02_15test", log_level="INFO", log_message="เริ่มการทดสอบ...")
 
-        #คลิกปุ่มเคาน์เตอร์เซอร์วิส
-        click((298, 131), delay=5, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
+     
+       #คลิกปุ่มเคาน์เตอร์เซอร์วิส
+        click((207, 140), delay=10, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มเคาน์เตอร์เซอร์วิสสำเร็จ")
+        time.sleep(5)
        # คลิกปุ่มผู้ว่าจ้าง
-        click((560, 135), delay=5, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
+        click((570, 154), delay=7, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
         
-        write_text(" บริษัท สมใจ 2559 จำกัด", delay=5, description="กรอก บริษัท สมใจ 2559 จำกัด")
-        log_handler("S02_15test", log_level="INFO", log_message="กรอก บริษัท สมใจ 2559 จำกัด")
-        pyautogui.press('enter')
+        click((212, 222), delay=7, description="คลิกปุ่มผ่อนค่างวด/เช่าซื้อ/ที่อยู่อาศัย")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มผ่อนค่างวด/เช่าซื้อ/ที่อยู่อาศัยสำเร็จ")
+        
+        
+        click((570, 154), delay=7, description="คลิกปุ่มถัดไป")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มถัดไปสำเร็จ")
+        
+        click((570, 154), delay=7, description="คลิกปุ่มถัดไป")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มถัดไปสำเร็จ")
+        
+        click((570, 154), delay=7, description="คลิกปุ่มถัดไป")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มถัดไปสำเร็จ")
+        
 
    # คลิกเลือกมูลนิธิเพื่อนหญิง
-        click((298, 131), delay=5, description="คลิกเลือก บริษัท สมใจ 2559 จำกัด")
+        click((82, 317), delay=5, description="คลิกเลือก บริษัท สมใจ 2559 จำกัด")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือก บริษัท สมใจ 2559 จำกัดสำเร็จ")
         time.sleep(10)
  

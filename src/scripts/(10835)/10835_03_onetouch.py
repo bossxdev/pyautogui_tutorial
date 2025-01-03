@@ -30,18 +30,40 @@ def run_test_case():
     try:
         log_handler("S02_15test", log_level="INFO", log_message="เริ่มการทดสอบ...")
 
-        #คลิกปุ่มเคาน์เตอร์เซอร์วิส
-        click((298, 131), delay=5, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
+
+       #คลิกปุ่มเคาน์เตอร์เซอร์วิส
+        click((207, 140), delay=10, description="คลิกปุ่มเคาน์เตอร์เซอร์วิส")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มเคาน์เตอร์เซอร์วิสสำเร็จ")
+        time.sleep(5)
        # คลิกปุ่มผู้ว่าจ้าง
-        click((560, 135), delay=5, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
+        click((570, 154), delay=7, description="คลิกปุ่มค้นหาผู้ว่าจ้าง")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มค้นหาผู้ว่าจ้างสำเร็จ")
         
-        write_text("นครหลวงคอนกรีด", delay=5, description="กรอกนครหลวงคอนกรีด")
-        log_handler("S02_15test", log_level="INFO", log_message="กรอกนครหลวงคอนกรีด")
-        pyautogui.press('enter')
+         # คลิกปุ่มผู้ว่าจ้าง
+        click((212, 222), delay=7, description="คลิกปุ่มผ่อนค่างวด/เช่าซื้อ/ที่อยู่อาศัย")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มผ่อนค่างวด/เช่าซื้อ/ที่อยู่อาศัยสำเร็จ")
+        
+                
+         # คลิกปุ่มผู้ว่าจ้าง
+        click((511, 650), delay=7, description="คลิกปุ่มถัดไป")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มถัดไปสำเร็จ")
+        
+                
+         # คลิกปุ่มผู้ว่าจ้าง
+        click((511, 650), delay=7, description="คลิกปุ่มถัดไป")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มถัดไปสำเร็จ")
+        
+                
+         # คลิกปุ่มผู้ว่าจ้าง
+        click((511, 650), delay=7, description="คลิกปุ่มถัดไป")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกปุ่มถัดไปสำเร็จ")
+        
+        click((726, 226), delay=5, description="คลิกเลือกนครหลวงเเคปปิตอล")
+        log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกนครหลวงเเคปปิตอลสำเร็จ")
+        time.sleep(10)
+        
 
-        click((361, 339), delay=5, description="คลิกเลือกสินเชื่อสาขา")
+        click((399, 402), delay=5, description="คลิกเลือกสินเชื่อสาขา")
         log_handler("S02_15test", log_level="INFO", log_message="คลิกเลือกสินเชื่อสาขาโนสำเร็จ")
         time.sleep(10)
         

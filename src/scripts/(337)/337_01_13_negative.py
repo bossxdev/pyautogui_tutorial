@@ -86,10 +86,14 @@ def run_test_case():
         time.sleep(5)
     
            # กรอกจำนวนเงิน
-        amount = 30000  # ตัวอย่างจำนวนเงินที่ต้องการกรอก
+        amount = 30001  # ตัวอย่างจำนวนเงินที่ต้องการกรอก
         write_text(str(amount), delay=5, description="กรอกจำนวนเงิน")
         log_handler("automation_test", log_level="INFO", log_message="กรอกจำนวนเงินสำเร็จ")
-
+        pyautogui.press('enter')
+        if not monitor_image_display("test1.png", timeout=3):
+            log_handler("automation_test", log_level="CRITICAL", log_message=f"กรุณาคีย์จำนวนเงิน")
+            return
+        
         # กดปุ่มยืนยันทำรายการ
         click((680, 646), delay=5, description="กดปุ่มยืนยันทำรายการ")
         log_handler("automation_test", log_level="INFO", log_message="กดปุ่มยืนยันทำรายการสำเร็จ")
@@ -102,6 +106,10 @@ def run_test_case():
         elif 0.1 <= amount <= 0.99:
             if not monitor_image_display("test1.png", timeout=3):
                 log_handler("automation_test", log_level="CRITICAL", log_message=f"ไม่สามารถชำระยอด {amount} ได้")
+                return
+        elif amount % 1 not in [0.00, 0.25, 0.50, 0.75]:
+            if not monitor_image_display("test3.png", timeout=3):
+                log_handler("automation_test", log_level="CRITICAL", log_message=f"รับได้เฉพาะจำนวนเงินที่เป็นทศนิยมที่ลงตัวเท่านั้น")
                 return
         else:
             log_handler("automation_test", log_level="WARNING", log_message=f"จำนวนเงิน {amount} ไม่อยู่ในเงื่อนไขที่รองรับ")
