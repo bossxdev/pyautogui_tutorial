@@ -8,37 +8,44 @@ from src.constants.constant import PATH, NSS_COMMENT_COLUMN
 from src.utils.excel_editor import excel_editor
 
 
-def critical_level_validate(script_name: str):
-    """
-    ฟังก์ชันสำหรับตรวจสอบและบันทึกภาพหน้าจอในกรณีที่เกิดข้อผิดพลาดระดับวิกฤติ
-    โดยจะสร้างโฟลเดอร์สำหรับบันทึกภาพหน้าจอและบันทึกภาพพร้อมใส่ Timestamp
+def critical_level_validate(script_name, message):
+    try:
+        """
+        ฟังก์ชันสำหรับตรวจสอบและบันทึกภาพหน้าจอในกรณีที่เกิดข้อผิดพลาดระดับวิกฤติ
+        โดยจะสร้างโฟลเดอร์สำหรับบันทึกภาพหน้าจอและบันทึกภาพพร้อมใส่ Timestamp
+    
+        Parameters:
+        script_name (str): ชื่อสคริปต์ที่ใช้สำหรับตั้งชื่อไฟล์ภาพหน้าจอ
+        """
+        # สร้างเส้นทางโฟลเดอร์สำหรับเก็บไฟล์ภาพหน้าจอ
+        log_image = f"{PATH['LOG']}{script_name}"
+        os.makedirs(log_image, exist_ok=True)
 
-    Parameters:
-    script_name (str): ชื่อสคริปต์ที่ใช้สำหรับตั้งชื่อไฟล์ภาพหน้าจอ
-    """
-    # สร้างเส้นทางโฟลเดอร์สำหรับเก็บไฟล์ภาพหน้าจอ
-    log_image = f"{PATH['LOG']}{script_name}"
-    os.makedirs(log_image, exist_ok=True)
+        # จับภาพหน้าจอปัจจุบัน
+        screenshot = pyautogui.screenshot()
 
-    # จับภาพหน้าจอปัจจุบัน
-    screenshot = pyautogui.screenshot()
+        # สร้าง Timestamp สำหรับเพิ่มในชื่อไฟล์ภาพ
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
-    # สร้าง Timestamp สำหรับเพิ่มในชื่อไฟล์ภาพ
-    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        # บันทึกภาพหน้าจอไปยังโฟลเดอร์ที่กำหนด
+        screenshot.save(f"{log_image}/{script_name}_image-file_{timestamp}.png")
 
-    # บันทึกภาพหน้าจอไปยังโฟลเดอร์ที่กำหนด
-    screenshot.save(f"{log_image}/{script_name}_image-file_{timestamp}.png")
+        # สร้างข้อมูลผลลัพธ์สำหรับส่งไปแก้ไขข้อมูลใน Excel
+        result = {
+            "cell": script_name,
+            "value": message
+        }
 
-    result = {
-        "row": script_name,
-        "column": NSS_COMMENT_COLUMN,
-        "value": "TEST_COMMENT"
-    }
+        # เรียกใช้ฟังก์ชัน excel_editor เพื่อแก้ไขข้อมูลในไฟล์ Excel
+        excel_editor(result)
 
-    excel_editor(result)
+        return None
+    except Exception as e:
+        print(f"เกิดข้อผิดพลาดในการตรวจสอบค่า Defect: {str(e)}")
+        return None
 
 
-def state(script_name: str, level: str = "DEBUG", message: str = None):
+def state(script_name, level, message: str = None):
     """
     ฟังก์ชันสำหรับสร้าง Log โดยรับพารามิเตอร์ script_name, level, และ message
     :param script_name: ชื่อของ log
@@ -66,7 +73,7 @@ def state(script_name: str, level: str = "DEBUG", message: str = None):
         logger.setLevel(log_level)
 
         if log_level == logging.CRITICAL:
-            critical_level_validate(script_name)
+            critical_level_validate(script_name, message)
 
         # สร้าง StreamHandler สำหรับแสดงผลใน console
         # stream_handler = logging.StreamHandler()
