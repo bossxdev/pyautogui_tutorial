@@ -1,44 +1,38 @@
 from openpyxl import load_workbook
+from openpyxl.utils import column_index_from_string
 from datetime import datetime
 import os
 
-from src.constants.constant import NSS_COMMENT_COLUMN, PATH, NSS_EXCEL_FILE, NSS_WORKSHEET_NAME
+from src.constants.constant import PATH, NSS_EXCEL_FILE, NSS_WORKSHEET_NAME
 
 
-def load_workbook_file(file_path, sheet_name=None):
+def update_cells(file_path, result):
     """
-    โหลดไฟล์ Excel และส่งคืน workbook กับ sheet
+    อัพเดทข้อมูลเซลล์ในไฟล์ Excel
     """
-    try:
-        wb = load_workbook(file_path)
-        if sheet_name:
-            sheet = wb[sheet_name]
-        else:
-            sheet = wb.active
-        return wb, sheet
-    except Exception as e:
-        print(f"เกิดข้อผิดพลาดในการโหลดไฟล์ Excel: {str(e)}")
-        return None, None
+    wb = load_workbook(file_path)
+    ws = wb[NSS_WORKSHEET_NAME]
 
-
-def update_multiple_cells(file_path, updates):
-    """
-    อัพเดทข้อมูลหลายเซลล์ในไฟล์ Excel
-    """
-    wb, sheet = load_workbook_file(file_path, sheet_name=NSS_WORKSHEET_NAME)
-    if not wb:
+    if not ws:
         return False
 
+    column = column_index_from_string("N")
+
     try:
-        for update in updates:
-            sheet.cell(row=update["row"], column=update["column"], value=update["value"])
-        return wb
+        for results in result:
+            for row in ws.iter_rows(column):
+                for cell in row:
+                    if cell.value == results["row"]:
+                        ws.cell(row=cell.row, column=results["column"]).value = results["value"]
+                        return wb
+
+        return None
     except Exception as e:
         print(f"เกิดข้อผิดพลาดในการอัพเดทข้อมูล: {str(e)}")
         return None
 
 
-def export_excel(wb, file_path, export_path=None):
+def save_export(workbook, file_path, export_path=None):
     """
     Export ไฟล์ Excel พร้อมระบุชื่อไฟล์
     """
@@ -54,37 +48,24 @@ def export_excel(wb, file_path, export_path=None):
 
         full_export_path = os.path.join(export_dir, export_path)
 
-        wb.save(full_export_path)
-        print(f"ไฟล์ถูก export ไปยัง: {full_export_path}")
+        workbook.save(full_export_path)
+        workbook.close()
+        print(f"บันทึกการเปลี่ยนแปลงและปิดไฟล์เรียบร้อยแล้ว")
+
         return True
-    except Exception as e:
-        print(f"เกิดข้อผิดพลาดในการ export ไฟล์: {str(e)}")
-        return False
-
-
-def save_and_close(wb):
-    """
-    บันทึกการเปลี่ยนแปลงและปิดไฟล์
-    """
-    try:
-        if wb:
-            # wb.save(file_path)  # ถ้าต้องการบันทึกในไฟล์เดิม
-            wb.close()
-            print(f"บันทึกการเปลี่ยนแปลงและปิดไฟล์เรียบร้อยแล้ว")
-            return True
     except Exception as e:
         print(f"เกิดข้อผิดพลาดในการบันทึกไฟล์: {str(e)}")
         return False
 
 
-if __name__ == "__main__":
+def excel_editor(result):
+    """
+    ฟังก์ชันสำหรับแก้ไขข้อมูลในไฟล์ Excel และทำการ export
+    :param file_path: เส้นทางของไฟล์ Excel
+    :param updates: รายการอัพเดทข้อมูลในเซลล์
+    """
     file_path = f"{PATH['ASSET']}{NSS_EXCEL_FILE}"
-    updates = [
-        {"row": 667, "column": NSS_COMMENT_COLUMN, "value": "Test_Comment_1"},
-        {"row": 740, "column": NSS_COMMENT_COLUMN, "value": "Test_Comment_2"},
-    ]
+    workbook = update_cells(file_path, [result])
 
-    wb = update_multiple_cells(file_path, updates)
-    if wb:
-        if export_excel(wb, file_path):
-            save_and_close(wb)
+    if workbook:
+        save_export(workbook, file_path)
